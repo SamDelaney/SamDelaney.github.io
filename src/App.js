@@ -1,23 +1,13 @@
 import React from 'react';
 import logo from './Logo3.svg';
 import './App.css';
+import About from './components/about.jsx'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Site under development.
-        </p>
-        <a
-          className="App-link"
-          href="https://www.linkedin.com/in/samuel-delaney/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My LinkedIn
-        </a>
+        <About />
       </header>
     </div>
   );
