@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text, Image, Separator} from 'office-ui-fabric-react'
+import {Text, Image} from 'office-ui-fabric-react'
 import Portrait from '../images/SamPortrait.jpg'
 import '../App.css'
 

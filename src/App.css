@@ -17,13 +17,16 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  padding: 30px;
   pointer-events: none;
+  position:absolute;
+  left:0;
+  top:0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-twist infinite 10s ease-in-out;
+    animation: App-logo-twist infinite 20s ease-in-out;
   }
 }
 
