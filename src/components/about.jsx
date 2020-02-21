@@ -5,7 +5,7 @@ import '../App.css'
 
 class About extends React.Component {
     render() {
-        return <div className="about">
+        return <div className="About">
             <Image src={Portrait} width={350}/>
             <AboutText />
         </div>

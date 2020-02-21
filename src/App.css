@@ -1,8 +1,7 @@
-.App {
-  text-align: left;
-}
-
-.about {
+/* Found in:
+  components/about.jsx
+*/
+.About {
   display: flex;
   flex-direction: row;
   border: #AFABB5;
@@ -11,11 +10,40 @@
   margin: 40px;
 }
 
-.about div {
+.About div {
   margin: 20px;
   max-width: 500px;
 }
 
+/* Found in:
+  components/portfolio.jsx
+*/
+.Gallery {
+  display: flex;
+  flex-direction: row;
+  border: #AFABB5;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 40px;
+}
+
+/* Found in:
+  components/gallerycard.jsx
+*/
+.GalleryKey {
+  padding: 5px;
+}
+
+/* Found in:
+  app.js
+*/
+.App {
+  text-align: left;
+}
+
+/* Found in:
+  app.js
+*/
 .App-logo {
   padding: 30px;
   pointer-events: none;
