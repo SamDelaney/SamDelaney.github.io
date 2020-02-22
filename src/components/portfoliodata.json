@@ -6,6 +6,11 @@
             "C#",
             "Project Management"
         ],
+        "imagepaths": [
+            "./WolfgangIcon.png",
+            "./SamPortrait.jpg",
+            "./SuitedWolfRed2.png"
+        ],
         "desc": "Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity."
     },
     "lite": {
@@ -17,6 +22,10 @@
             "Project Management",
             "XSLT",
             "QT"
+        ],
+        "imagepaths": [
+            "./WolfgangIcon.png",
+            "./SamPortrait.jpg"
         ],
         "desc": "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with client role (Prof. Larry Hayashi – Canada Institute of Linguistics) to construct a cross platform desktop application based on their mockups."
     }
