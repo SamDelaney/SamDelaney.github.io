@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, OverflowSet, Modal} from 'office-ui-fabric-react';
+import {Text, Image, OverflowSet, Modal, Link} from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 
 var images = require.context("../images", true)
@@ -21,7 +21,7 @@ class GalleryCard extends React.Component {
     };
 
     render() {
-        return <> 
+        return <>
         <Card onClick={this.onClicked} styles={this.galleryStyles}>
             <Card.Item>
                 <Text variant="large" >
@@ -30,7 +30,9 @@ class GalleryCard extends React.Component {
             </Card.Item>
 
             <Card.Item>
-                <Image src={images(this.props.data.imagepaths[0])} maxwidth={250} height={250}/>
+                <div className="CardImage">
+                    <Image src={images(this.props.data.imagepaths[0])} width={250}/>
+                </div>
             </Card.Item>
             
             <Card.Section> 
@@ -38,7 +40,7 @@ class GalleryCard extends React.Component {
                     {this.props.data.date}
                 </Text>
                 <Text variant="small">
-                    {this.props.data.desc}
+                    {this.props.data.paras[0]}
                 </Text>
                 <OverflowSet items={this.props.data.keys} onRenderItem={this._onRenderItem}/>
             </Card.Section>
@@ -48,9 +50,10 @@ class GalleryCard extends React.Component {
             <div>
                 <Text variant={"xxLargePlus"}>{this.props.data.title}</Text>
                 <OverflowSet items={this.props.data.imagepaths} onRenderItem={this._onRenderImage}/>
-                <Text block variant={"large"}>{this.props.data.desc}</Text>
+                <OverflowSet vertical items={[this.props.data.paras[0]]} onRenderItem={this._onRenderModalPara}/>
                 <Text block variant={"xLarge"}>Relevant Skills</Text>
                 <OverflowSet vertical items= {this.props.data.keys} onRenderItem={this._onRenderModalKey}/>
+                <Link src={this.props.data.links[0]}>{this.props.data.links[0]}</Link>
             </div>
         </Modal>
         </>
@@ -64,10 +67,16 @@ class GalleryCard extends React.Component {
         this.setState({showModal: true});
     }
 
+    _onRenderLink = (link) => {
+        return(
+            <Link src={link}>{link}</Link>
+        )
+    }
+
     _onRenderImage = (image) => {
         var imageRef = images(image)
         return (
-            <Image src={imageRef} height={450}/>
+            <Image border={50} src={imageRef} height={450}/>
         )
     }
 
@@ -75,6 +84,10 @@ class GalleryCard extends React.Component {
         return (
             <Text variant={'large'}>{"- " + key}</Text>
         )
+    }
+
+    _onRenderModalPara = (para) => {
+        return <Text variant={'large'}>{para}</Text>
     }
 
     _onRenderItem = (item) => {

@@ -18,13 +18,29 @@
 /* Found in:
   components/portfolio.jsx
 */
-.Gallery {
-  display: flex;
-  flex-direction: row;
+.Portfolio {
   border: #AFABB5;
   border-style: solid;
   border-radius: 15px;
   padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 70%;
+}
+
+.Gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Gallery > * {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1e212771;
+  border-radius: 15px;
+  width: 300px;
+  padding: 25px;
 }
 
 /* Found in:
@@ -39,6 +55,14 @@
   max-width: 70%;
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.CardImage {
+  height: 250px;
+}
+
+.CardImage > * {
+  margin: auto;
 }
 
 /* Found in:

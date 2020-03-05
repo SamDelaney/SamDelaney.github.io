@@ -4,14 +4,23 @@
         "date": "February 2020",
         "keys": [
             "C#",
-            "Project Management"
+            "Project Management",
+            "Graphic Design",
+            "Unity",
+            "Code Review"
         ],
         "imagepaths": [
             "./WolfgangIcon.png",
-            "./SamPortrait.jpg",
-            "./SuitedWolfRed2.png"
+            "./WGStart.PNG",
+            "./WGDeath.PNG",
+            "./WGGameplay1.PNG"
         ],
-        "desc": "Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity."
+       "links": ["https://vhsoftware.dev/wolfgang"],
+        "paras": [
+		"Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity.",
+            "As Vice President of the TWU Math, Engineering and Technology Club, I was involved in creating a team of computer scientists, game developers and artists to send to BC Game Jam 2020 at the University of British Columbia, as well as organizing a team meeting roughly a week before the competetion to discuss plans for the event.",
+            "Upon arrival at the event I was given the project manager role by consensus, and launched the team into a brainstorming meeting."
+        ]
     },
     "lite": {
         "title": "LITE",
@@ -24,9 +33,95 @@
             "QT"
         ],
         "imagepaths": [
-            "./WolfgangIcon.png",
-            "./SamPortrait.jpg"
+            "./LITEIcon1.png"
         ],
-        "desc": "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with client role (Prof. Larry Hayashi – Canada Institute of Linguistics) to construct a cross platform desktop application based on their mockups."
+        "links": ["https://github.com/samdelaney/LITE"],
+        "paras": [
+            "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with client role (Prof. Larry Hayashi – Canada Institute of Linguistics) to construct a cross platform desktop application based on their mockups."
+        ]
+    },
+    "clarifeye": {
+        "title": "ClarifEye",
+        "date": "January 2020",
+        "keys": [
+            "Java",
+            "Android",
+            "Graphic Design"
+        ],
+        "imagepaths": [
+            "./ClarifEyeIcon.png"
+        ],
+        "links": ["https://devpost.com/software/clarifeye-fpbics"],
+        "paras": [
+            "Part of a four-person team which competed at nwHacks 2020.  Built and designed an Andoid application to aid the visually impaired by verbally identifying their surroundings as well as reading aloud text on objects or documents. Contributed knowledge of version control, team management, and graphic design, as well as designing and programming the core of our language synthesis algorithm."
+        ]
+    },
+    "samdelaney_tech" : {
+        "title" : "SamDelaney.tech",
+        "date" :"Feb-Mar 2020",
+        "keys": [
+            "Javascript",
+            "Graphic Design",
+            "React",
+            "Git",
+            "Office UI Fabric",
+            "CSS"
+        ],
+        "imagepaths": [
+            "./Logo3.svg"
+        ],
+        "links":["samdelaney.tech"],
+        "paras": [
+            "Individually designed and built a web-based portfolio website using ReactJS with Office UI Fabric and hosted on the Google Cloud Platform."
+        ]
+    },
+    "fieldworks" : {
+        "title": "FieldWorks",
+        "date": "May-July 2018",
+        "keys" : [
+            "C#",
+            "Agile",
+            "Kanban",
+            "C++",
+            "Git",
+            "Gerrit",
+            "CI",
+            "Code Review"
+        ],
+        "imagepaths": [
+            "./FlexIcon.png"
+        ],
+        "links": [
+            "https://github.com/sillsdev/FieldWorks", 
+            "https://software.sil.org/fieldworks/"
+        ],
+        "paras":[
+            "Summer Linguistic Software Developer at SIL International. Part of a team working with an agile kanban organizational system. Designed and implemented features of SIL’s FieldWorks Language Explorer. Debugged the FieldWorks developer version installer. Performed code review using Gerrit."
+        ]
+    },
+    "thecombine" : {
+        "title": "The Combine",
+        "date": "May-July 2019",
+        "keys": [
+            "Project Management",
+            "React",
+            "TypeScript",
+            "C#",
+            "Agile",
+            "Kanban",
+            "Code Review",
+            "MaterialUI",
+            "Git",
+            "Graphic Design",
+            "REST API"
+        ],
+        "imagepaths": [
+            "./combinelogin.PNG",
+            "./combineregister.PNG"
+        ],
+        "links":["https://github.com/sillsdev/TheCombine", "https://thecombine.languagetechnology.org"],
+        "paras": [
+            "Project Manager at SIL International – worked closely with a UX designer, an owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, and technological resources. Continued managing, instructing and working alongside a team of 6 interns to build The Combine using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. Ran numerous user tests and interfaced with clients to improve user-friendliness."
+        ]
     }
 }
