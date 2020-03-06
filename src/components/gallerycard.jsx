@@ -4,6 +4,14 @@ import {Card} from '@uifabric/react-cards';
 
 var images = require.context("../images", true)
 
+const footerCardSectionStyles = {
+    root: {
+      borderTop: '1px solid #F3F2F1'
+    }
+};
+
+const footerCardSectionTokens = { padding: '12px 0px 0px' };
+
 class GalleryCard extends React.Component {
     state = {
         showModal: false
@@ -39,9 +47,15 @@ class GalleryCard extends React.Component {
                 <Text variant="small">
                     {this.props.data.date}
                 </Text>
-                <Text variant="small">
+                <Text variant="small" className="CardText">
                     {this.props.data.paras[0]}
                 </Text>
+            </Card.Section>
+            <Card.Item grow={1}>
+                <span/>
+            </Card.Item>
+
+            <Card.Section styles={footerCardSectionStyles}>
                 <OverflowSet items={this.props.data.keys} onRenderItem={this._onRenderItem}/>
             </Card.Section>
         </Card>

@@ -6,8 +6,7 @@
             "C#",
             "Project Management",
             "Graphic Design",
-            "Unity",
-            "Code Review"
+            "Unity"
         ],
         "imagepaths": [
             "./WolfgangIcon.png",
@@ -61,11 +60,10 @@
         "date" :"Feb-Mar 2020",
         "keys": [
             "Javascript",
-            "Graphic Design",
             "React",
-            "Git",
             "Office UI Fabric",
-            "CSS"
+            "CSS",
+            "GCP"
         ],
         "imagepaths": [
             "./Logo3.svg"
@@ -80,13 +78,10 @@
         "date": "May-July 2018",
         "keys" : [
             "C#",
-            "Agile",
-            "Kanban",
             "C++",
-            "Git",
-            "Gerrit",
-            "CI",
-            "Code Review"
+            "Scrum",
+            "Kanban",
+            "Gerrit"
         ],
         "imagepaths": [
             "./FlexIcon.png"
@@ -107,21 +102,17 @@
             "React",
             "TypeScript",
             "C#",
-            "Agile",
-            "Kanban",
-            "Code Review",
-            "MaterialUI",
-            "Git",
-            "Graphic Design",
-            "REST API"
+            "REST"
         ],
         "imagepaths": [
+            "./CombineLogoV1.png",
             "./combinelogin.PNG",
             "./combineregister.PNG"
         ],
         "links":["https://github.com/sillsdev/TheCombine", "https://thecombine.languagetechnology.org"],
         "paras": [
-            "Project Manager at SIL International – worked closely with a UX designer, an owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, and technological resources. Continued managing, instructing and working alongside a team of 6 interns to build The Combine using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. Ran numerous user tests and interfaced with clients to improve user-friendliness."
+            "Project Manager at SIL International – worked closely with a UX designer, an owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, and technological resources. Continued managing, instructing and working alongside a team of 6 interns to build the tool in just under 3 months.",  
+		"The Combine was built using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. Ran numerous user tests and interfaced with clients to improve user-friendliness."
         ]
     }
 }
