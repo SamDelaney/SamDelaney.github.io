@@ -3,9 +3,9 @@ import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, g
 import {Card} from '@uifabric/react-cards';
 import DragScrollProvider from 'drag-scroll-provider';
 import {initializeIcons} from '@uifabric/icons';
+import {currentTheme} from '../App'
 
 var images = require.context("../images", true)
-var theme = getTheme()
 initializeIcons();
 
 class GalleryCard extends React.Component {
@@ -16,7 +16,8 @@ class GalleryCard extends React.Component {
     galleryStyles = {
         root: {
             margin: 10,
-            padding: 10
+            padding: 10,
+            background: currentTheme.palette.themePrimary
         }
     }
 
@@ -35,7 +36,6 @@ class GalleryCard extends React.Component {
 
     xIconStyles = mergeStyleSets({
         root: {
-          color: theme.palette.neutralPrimary,
           position: 'absolute',
           top: '4px',
           right: '4px'
@@ -53,6 +53,12 @@ class GalleryCard extends React.Component {
             fontSize: FontSizes.xxLargePlus,
             fontWeight: FontWeights.bold,
             padding: '12px 12px 14px 24px',
+        }
+    }
+
+    modalParaStyles = {
+        root: {
+            background: currentTheme.palette.themePrimary
         }
     }
 
@@ -109,9 +115,8 @@ class GalleryCard extends React.Component {
                 </DragScrollProvider>
 
                 <OverflowSet vertical items={this.props.data.paras} onRenderItem={this._onRenderModalPara}/>
-                <Text block variant={"xLarge"} className="ModalPara">Relevant Skills</Text>
+                <Text block variant={"xLarge"} className="ModalPara" styles={this.modalParaStyles}>Relevant Skills</Text>
                 <OverflowSet vertical items= {this.props.data.keys} onRenderItem={this._onRenderModalKey}/>
-                s
                 <OverflowSet styles={this.footerCardSectionStyles} items={this.props.data.links} onRenderItem={this._onRenderLink} className="ModalLinks"/>
             </div>
         </Modal>
@@ -146,7 +151,7 @@ class GalleryCard extends React.Component {
 
     _onRenderLink = (link) => {
         var icon = "Globe";
-        if(link.type == "repo")
+        if(link.type === "repo")
             icon = "Code";
 
         return(
@@ -163,12 +168,12 @@ class GalleryCard extends React.Component {
 
     _onRenderModalKey = (key) => {
         return (
-            <Text variant={'large'} className="ModalKey">{"- " + key}</Text>
+            <Text variant={'large'} className="ModalKey" styles={this.modalParaStyles}>{"- " + key}</Text>
         )
     }
 
     _onRenderModalPara = (para) => {
-        return <Text variant={'large'} className="ModalPara">{para}</Text>
+        return <Text variant={'large'} className="ModalPara" styles={this.modalParaStyles}>{para}</Text>
     }
 }
 

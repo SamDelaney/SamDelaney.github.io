@@ -4,10 +4,9 @@
 .About {
   display: flex;
   flex-direction: row;
-  border: #AFABB5;
   border-style: solid;
   border-radius: 15px;
-  margin: 40px;
+  margin: 20px;
 }
 
 .About div {
@@ -19,12 +18,10 @@
   components/portfolio.jsx
 */
 .Portfolio {
-  border: #AFABB5;
   border-style: solid;
   border-radius: 15px;
   padding: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px;
   max-width: 55%;
 }
 
@@ -37,11 +34,15 @@
 .Gallery > * {
   margin-left: auto;
   margin-right: auto;
-  background-color: #1e212771;
   border-radius: 15px;
   width: 300px;
   padding: 25px;
 }
+
+/* Found in:
+  components/contactform.jsx
+*/
+
 
 /* Found in:
   components/gallerycard.jsx
@@ -92,12 +93,10 @@
   margin-left: 13%;
   padding: 2%;
   margin-right: auto;
-  background-color: rgba(211, 211, 211, 0.2);;
 }
 
 .ModalKey {
   width: 70%;
-  background-color: rgba(211, 211, 211, 0.2);
   padding-left: 4%;
   margin-left: 13%;
   margin-right: auto;
@@ -118,13 +117,6 @@
 /* Found in:
   app.js
 */
-.App {
-  text-align: left;
-}
-
-/* Found in:
-  app.js
-*/
 .App-logo {
   padding: 30px;
   pointer-events: none;
@@ -139,19 +131,14 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+.App {
+  text-align: left;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-twist {
