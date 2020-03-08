@@ -1,6 +1,6 @@
 export const darkTheme = {
     palette: {
-        themePrimary: '#20232a', /* in use */
+        themePrimary: '#afabb5', /* in use */
         themeLighterAlt: '#070707',
         themeLighter: '#1c1b1d',
         themeLight: '#343336',
@@ -8,7 +8,7 @@ export const darkTheme = {
         themeSecondary: '#9a969f',
         themeDarkAlt: '#b6b2bc',
         themeDark: '#c1bec7',
-        themeDarker: '#f1eef6',
+        themeDarker: '#20232a', /* in use */
         neutralLighterAlt: '#262a32',
         neutralLighter: '#262931',
         neutralLight: '#24282f', 
@@ -27,7 +27,7 @@ export const darkTheme = {
 
 export const lightTheme = {
     palette: {
-      themePrimary: '#eff6fc', /* in use */
+      themePrimary: '#0078d4', /* in use */
       themeLighterAlt: '#eff6fc',
       themeLighter: '#deecf9',
       themeLight: '#c7e0f4',
@@ -35,7 +35,7 @@ export const lightTheme = {
       themeSecondary: '#2b88d8',
       themeDarkAlt: '#106ebe',
       themeDark: '#005a9e',
-      themeDarker: '#004578',
+      themeDarker: '#eff6fc', /* in use */
       neutralLighterAlt: '#faf9f8',
       neutralLighter: '#f3f2f1',
       neutralLight: '#edebe9',

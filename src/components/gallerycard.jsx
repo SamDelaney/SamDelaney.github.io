@@ -17,7 +17,7 @@ class GalleryCard extends React.Component {
         root: {
             margin: 10,
             padding: 10,
-            background: currentTheme.palette.themePrimary
+            background: currentTheme.palette.themeDarker
         }
     }
 
@@ -58,7 +58,7 @@ class GalleryCard extends React.Component {
 
     modalParaStyles = {
         root: {
-            background: currentTheme.palette.themePrimary
+            background: currentTheme.palette.themeDarker
         }
     }
 
