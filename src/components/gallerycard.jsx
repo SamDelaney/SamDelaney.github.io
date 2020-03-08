@@ -1,10 +1,12 @@
 import React from 'react';
-import {Text, Image, ImageFit, OverflowSet, Modal, Link, mergeStyleSets, IconButton, getTheme, FontSizes, FontWeights} from 'office-ui-fabric-react';
+import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, getTheme, FontSizes, FontWeights} from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import DragScrollProvider from 'drag-scroll-provider';
+import {initializeIcons} from '@uifabric/icons';
 
 var images = require.context("../images", true)
 var theme = getTheme()
+initializeIcons();
 
 class GalleryCard extends React.Component {
     state = {
@@ -31,23 +33,26 @@ class GalleryCard extends React.Component {
         }
     };
 
-    iconButtonStyles = mergeStyleSets({
+    xIconStyles = mergeStyleSets({
         root: {
           color: theme.palette.neutralPrimary,
-          marginLeft: 'auto',
-          marginTop: '4px',
-          marginRight: '2px'
-        },
-        rootHovered: {
-          color: theme.palette.neutralDark
+          position: 'absolute',
+          top: '4px',
+          right: '4px'
         }
       });
+
+    linkIconStyles= {
+        root: {
+            fontSize: 1500
+        }
+    }
       
     headerStyles = {
         root: {
             fontSize: FontSizes.xxLargePlus,
             fontWeight: FontWeights.bold,
-            padding: '12px 12px 14px 24px'
+            padding: '12px 12px 14px 24px',
         }
     }
 
@@ -85,15 +90,14 @@ class GalleryCard extends React.Component {
 
         <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} className="GalleryModal">
             <div margin={200}>
-                <div>
-                    <Text styles={this.headerStyles}>{this.props.data.title}</Text>
-                    <IconButton
-                    styles={this.iconButtonStyles}
+                <Text styles={this.headerStyles}>{this.props.data.title}</Text>
+                <span/>
+                <IconButton
+                    styles={this.xIconStyles}
                     iconProps={{ iconName: 'Cancel' }}
                     ariaLabel="Close modal"
                     onClick={this._closeModal}
-                    />
-                </div>
+                />
                 <DragScrollProvider>
                     {({onMouseDown, ref}) => (
                         <div className="ModalImages" ref={ref} onMouseDown={onMouseDown}>
@@ -103,9 +107,11 @@ class GalleryCard extends React.Component {
                         </div>
                     )}  
                 </DragScrollProvider>
-                <OverflowSet vertical items={[this.props.data.paras[0]]} onRenderItem={this._onRenderModalPara}/>
+
+                <OverflowSet vertical items={this.props.data.paras} onRenderItem={this._onRenderModalPara}/>
                 <Text block variant={"xLarge"} className="ModalPara">Relevant Skills</Text>
                 <OverflowSet vertical items= {this.props.data.keys} onRenderItem={this._onRenderModalKey}/>
+                s
                 <OverflowSet styles={this.footerCardSectionStyles} items={this.props.data.links} onRenderItem={this._onRenderLink} className="ModalLinks"/>
             </div>
         </Modal>
@@ -139,8 +145,12 @@ class GalleryCard extends React.Component {
     }
 
     _onRenderLink = (link) => {
+        var icon = "Globe";
+        if(link.type == "repo")
+            icon = "Code";
+
         return(
-            <a href={link} className="ModalLink">{link}</a>
+            <IconButton iconProps={{iconName: icon, style: {fontSize: 40}}} href={link.url} className="ModalLink">{link.url}</IconButton>
         )
     }
 

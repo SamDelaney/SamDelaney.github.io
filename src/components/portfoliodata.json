@@ -14,11 +14,18 @@
             "./WGDeath.PNG",
             "./WGGameplay1.PNG"
         ],
-       "links": ["https://vhsoftware.dev/wolfgang"],
+       "links": [
+            {
+                "type": "site",
+                "url": "https://vhsoftware.dev/wolfgang"
+            },
+            {
+                "type": "repo",
+                "url": "https://github.com/JVH-Software/BCGameJam2020"
+            }    
+        ],
         "paras": [
-		"Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity.",
-            "As Vice President of the TWU Math, Engineering and Technology Club, I was involved in creating a team of computer scientists, game developers and artists to send to BC Game Jam 2020 at the University of British Columbia, as well as organizing a team meeting roughly a week before the competetion to discuss plans for the event.",
-            "Upon arrival at the event I was given the project manager role by consensus, and launched the team into a brainstorming meeting."
+		"Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity."
         ]
     },
     "lite": {
@@ -34,7 +41,12 @@
         "imagepaths": [
             "./LITEIcon1.png"
         ],
-        "links": ["https://github.com/samdelaney/LITE"],
+        "links": [
+            {
+                "type": "repo",
+                "url": "https://github.com/samdelaney/LITE"
+            }    
+        ],
         "paras": [
             "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with client role (Prof. Larry Hayashi – Canada Institute of Linguistics) to construct a cross platform desktop application based on their mockups."
         ]
@@ -50,7 +62,12 @@
         "imagepaths": [
             "./ClarifEyeIcon.png"
         ],
-        "links": ["https://devpost.com/software/clarifeye-fpbics"],
+        "links": [
+            {
+                "type": "site",
+                "url": "https://devpost.com/software/clarifeye-fpbics"
+            }   
+        ],
         "paras": [
             "Part of a four-person team which competed at nwHacks 2020.  Built and designed an Andoid application to aid the visually impaired by verbally identifying their surroundings as well as reading aloud text on objects or documents. Contributed knowledge of version control, team management, and graphic design, as well as designing and programming the core of our language synthesis algorithm."
         ]
@@ -68,7 +85,12 @@
         "imagepaths": [
             "./Logo3.svg"
         ],
-        "links":["samdelaney.tech"],
+        "links":[
+            {
+                "type": "site",
+                "url": "http://samdelaney.tech"
+            }
+        ],
         "paras": [
             "Individually designed and built a web-based portfolio website using ReactJS with Office UI Fabric and hosted on the Google Cloud Platform."
         ]
@@ -87,8 +109,14 @@
             "./FlexIcon.png"
         ],
         "links": [
-            "https://github.com/sillsdev/FieldWorks", 
-            "https://software.sil.org/fieldworks/"
+            {
+                "type": "repo",
+                "url": "https://github.com/sillsdev/FieldWorks"
+            },
+            {
+                "type": "site",
+                "url": "https://software.sil.org/fieldworks/"
+            }         
         ],
         "paras":[
             "Summer Linguistic Software Developer at SIL International. Part of a team working with an agile kanban organizational system. Designed and implemented features of SIL’s FieldWorks Language Explorer. Debugged the FieldWorks developer version installer. Performed code review using Gerrit."
@@ -109,7 +137,16 @@
             "./combinelogin.PNG",
             "./combineregister.PNG"
         ],
-        "links":["https://github.com/sillsdev/TheCombine", "https://thecombine.languagetechnology.org"],
+        "links":[
+            {
+                "type": "repo",
+                "url": "https://github.com/sillsdev/TheCombine"
+            },
+            {
+                "type": "site",
+                "url": "https://thecombine.languagetechnology.org"
+            }
+        ],
         "paras": [
             "Project Manager at SIL International – worked closely with a UX designer, an owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, and technological resources. Continued managing, instructing and working alongside a team of 6 interns to build the tool in just under 3 months.",  
 		"The Combine was built using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. Ran numerous user tests and interfaced with clients to improve user-friendliness."
