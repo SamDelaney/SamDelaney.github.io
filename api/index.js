@@ -1,7 +1,7 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import nodemailer from 'nodemailer';
-import cors from 'cors';
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const cors = require('cors');
 
 const app = express();
 
@@ -34,7 +34,7 @@ var smtpTransport = nodemailer.createTransport({
 });
 
 var mailOptions = {
-  from: data.email,
+  from: 'samdelaney.tech@gmail.com',
   to: 'sam@thedelaneys.net',
   subject: data.subject,
   html: `<p>Email: ${data.email}</p>
@@ -48,7 +48,7 @@ smtpTransport.sendMail(mailOptions,
     res.send(error)
   }else {
     res.send('Success')
-  } 
+  }
   smtpTransport.close();
 });
 

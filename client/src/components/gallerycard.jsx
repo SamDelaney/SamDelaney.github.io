@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, getTheme, FontSizes, FontWeights} from 'office-ui-fabric-react';
+import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, FontSizes, FontWeights} from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import DragScrollProvider from 'drag-scroll-provider';
 import {initializeIcons} from '@uifabric/icons';

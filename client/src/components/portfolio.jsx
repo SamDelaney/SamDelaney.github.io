@@ -5,9 +5,16 @@ import Data from './portfoliodata.json'
 
 
 class Portfolio extends React.Component {
+    portfolioHeaderStyles = {
+        root: {
+            margin: 10,
+            marginLeft: 40
+        }
+    }
+
     render() {
         return <div className="DefaultComponentWrapper"> 
-            <Text block variant={"xLargePlus"}>Portfolio</Text>
+            <Text block variant={"xLargePlus"} styles={this.portfolioHeaderStyles}>My Work</Text>
             <Gallery />
         </div>
     }

@@ -2,7 +2,6 @@
   Utilities
 */
 .DefaultComponentWrapper {
-  border-style: solid;
   border-radius: 15px;
   padding: 40px;
   margin: 20px;
@@ -15,7 +14,6 @@
 .About {
   display: flex;
   flex-direction: row;
-  border-style: solid;
   border-radius: 15px;
   margin: 20px;
 }
