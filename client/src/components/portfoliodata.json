@@ -25,7 +25,8 @@
             }    
         ],
         "paras": [
-		"Part of a seven-person team which competed at BC Game Jam 2020. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming to our top-down 2d action game built in C# with Unity."
+            "Part of a seven-person team which competed at BC Game Jam 2020 constructing a 2d, top-down roguelike in Unity. Took on project manager role, running meetings, doing code review, spearheading design and managing the repository and the Kanban board. Also contributed menu UI, graphic design and algorithmic programming.",
+            "Wolfgang is a top-down roguelike action game built with the theming constraints of 'Pack' and 'Overcome.' It is built in Unity 2d with C#. In our development schema, to account for the extremely limited time frame, we used an agile system based around a Kanban board for tasks, and strictly enforced feature branching to ensure the project remained stable and clean."
         ]
     },
     "lite": {
@@ -39,7 +40,10 @@
             "QT"
         ],
         "imagepaths": [
-            "./LITEIcon1.png"
+            "./LITEIcon1.png",
+            "./LITEFunction.png",
+            "./LITEExample1.PNG",
+            "./LITEExample2.PNG"
         ],
         "links": [
             {
@@ -48,7 +52,8 @@
             }    
         ],
         "paras": [
-            "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with client role (Prof. Larry Hayashi – Canada Institute of Linguistics) to construct a cross platform desktop application based on their mockups."
+            "Individually built an autoformatting tool using Python with Qt and XSLT which allows researchers and students to copy interlinear language data from SIL’s Fieldworks Language Explorer directly into academic papers. Worked closely with Prof. Larry Hayashi of the Canada Institute of Linguistics, who took on an owner role, to construct a cross platform desktop application based on his mockups.",
+            "This project was created over the course of a semester as part of a directed study on language software development. "
         ]
     },
     "clarifeye": {
@@ -60,16 +65,23 @@
             "Graphic Design"
         ],
         "imagepaths": [
-            "./ClarifEyeIcon.png"
+            "./ClarifEyeIcon.png",
+            "./ClarifEyeRead.png",
+            "./ClarifEyeDesc.png"
         ],
         "links": [
             {
                 "type": "site",
                 "url": "https://devpost.com/software/clarifeye-fpbics"
+            },
+            {
+                "type":"repo",
+                "url": "https://github.com/zongqi-wang/ClarifEye"
             }   
         ],
         "paras": [
-            "Part of a four-person team which competed at nwHacks 2020.  Built and designed an Andoid application to aid the visually impaired by verbally identifying their surroundings as well as reading aloud text on objects or documents. Contributed knowledge of version control, team management, and graphic design, as well as designing and programming the core of our language synthesis algorithm."
+            "Part of a four-person team which competed at nwHacks 2020.  Built and designed an Andoid application to aid the visually impaired by verbally identifying their surroundings as well as reading aloud text on objects or documents. Contributed knowledge of version control, team management, and graphic design, as well as designing and programming the core of our language synthesis algorithm.",
+            "ClarifEye utilizes the power of Google's Cloud Vision API to analyze the current image from the user's camera and synthesizes an audio description of that image through our original algorithm. Additionally, the application provides a text/document reading service to its users using similar computer vision technology. ClarifEye also places emphasis on audio and haptic cues to aid the user as they interact with the app through extremely simple swiping or tapping gestures."
         ]
     },
     "samdelaney_tech" : {
@@ -83,7 +95,10 @@
             "GCP"
         ],
         "imagepaths": [
-            "./Logo3.svg"
+            "./Logo3.svg",
+            "./SDTDark.PNG",
+            "./SDTLight.PNG",
+            "./sdtPlaceholder.PNG"
         ],
         "links":[
             {
@@ -92,7 +107,8 @@
             }
         ],
         "paras": [
-            "Individually designed and built a web-based portfolio website using ReactJS with Office UI Fabric and hosted on the Google Cloud Platform."
+            "Individually designed and built this web-based portfolio website using ReactJS with Microsoft's Office UI Fabric components. It is a static site hosted on Google Cloud Platform, but does allow users to send messages to me through an SMTP API built with Nodemailer.",
+            "Samdelaney.tech is designed to be extensible to allow for future projects such as a personal blog and an application hosting site. It currently supports dynamic theming and is designed for easy conversion to a mobile site. It also features a Javascript based API for sending messages via SMTP."
         ]
     },
     "fieldworks" : {
@@ -106,20 +122,24 @@
             "Gerrit"
         ],
         "imagepaths": [
-            "./FlexIcon.png"
+            "./FlexIcon.png",
+            "./DiscourseChart.png",
+            "./TaggingView.png",
+            "./FlexTCCT.PNG"
         ],
         "links": [
             {
-                "type": "repo",
-                "url": "https://github.com/sillsdev/FieldWorks"
-            },
-            {
                 "type": "site",
                 "url": "https://software.sil.org/fieldworks/"
-            }         
+            },
+            {
+                "type": "repo",
+                "url": "https://github.com/sillsdev/FieldWorks"
+            }      
         ],
         "paras":[
-            "Summer Linguistic Software Developer at SIL International. Part of a team working with an agile kanban organizational system. Designed and implemented features of SIL’s FieldWorks Language Explorer. Debugged the FieldWorks developer version installer. Performed code review using Gerrit."
+            "Summer Linguistic Software Developer at SIL International. Part of a team working with an agile Kanban organizational system. Designed and implemented discourse and syntactic analysis features of SIL’s FieldWorks Language Explorer, debugged the FieldWorks developer version installer, and performed code review using Gerrit.",
+            "FieldWorks is a suite of software tools that help researchers manage linguistic and cultural data. FieldWorks supports tasks ranging from the initial entry of collected data through to the preparation of data for publication, including dictionary development, interlinearization of texts, morphological analysis, and other publications. Furthermore, FieldWorks BTE contains a specialized drafting and editing environment for Bible Translators, which provides interaction with the language data stored in Language Explorer."
         ]
     },
     "thecombine" : {
@@ -135,21 +155,26 @@
         "imagepaths": [
             "./CombineLogoV1.png",
             "./combinelogin.PNG",
-            "./combineregister.PNG"
+            "./CombineProj.PNG",
+            "./CombineSemDoms.PNG",
+            "./CombineEntry.PNG",
+            "./CombineChars.PNG",
+            "./CombineMerge2.PNG",
+            "./CombineReview.PNG"
         ],
         "links":[
             {
-                "type": "repo",
-                "url": "https://github.com/sillsdev/TheCombine"
-            },
-            {
                 "type": "site",
                 "url": "https://thecombine.languagetechnology.org"
+            },
+            {
+                "type": "repo",
+                "url": "https://github.com/sillsdev/TheCombine"
             }
         ],
         "paras": [
-            "Project Manager at SIL International – worked closely with a UX designer, an owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, and technological resources. Continued managing, instructing and working alongside a team of 6 interns to build the tool in just under 3 months.",  
-		"The Combine was built using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. Ran numerous user tests and interfaced with clients to improve user-friendliness."
+            "Project Manager at SIL International – worked closely with a UX designer, owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, or technology. Continued managing, instructing and working with a team of 6 interns to build it within 3 months. Ran numerous user tests with clients to minimize the app's learning curve.",  
+		    "The Combine was built using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. It uses Redux for robust internationalization, and has been localized for several different common glossing languages. TheCombine also works on a variety of browsers and devices without formatting issues."
         ]
     }
 }
