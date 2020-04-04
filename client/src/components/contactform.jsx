@@ -41,7 +41,11 @@ class ContactForm extends React.Component {
           ).then(res => {
             this.setState(defaultState);
           })
-          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+          .catch(err => {
+	    this.setState({
+	      buttonText: 'Error: Try Again'
+	    })
+	  })
       }
 
     render() {
