@@ -1,7 +1,6 @@
 import React from 'react';
 import {MaskedTextField, TextField, Text, Button} from 'office-ui-fabric-react';
-import axios from 'axios';
-import {currentTheme} from '../App'
+import {currentTheme} from '../App';
 
 const defaultState = {
     subject: "",
@@ -11,13 +10,6 @@ const defaultState = {
     sent: false,
     buttonText: "Email Me"
 }
-
-var url = window.location.href;
-if (url.substring(url.length - 6, url.length) === ":3000/") { //development version only
-    url = url.substring(0, url.length - 6);
-}
-
-const apiAddress = url + ":4444/api/v1";
 
 class ContactForm extends React.Component {
 
@@ -36,21 +28,24 @@ class ContactForm extends React.Component {
         this.setState({
             buttonText: '...sending'
         })
-      
-        let data = {
-            subject: this.state.subject,
-            email: this.state.email,
-            phone: this.state.phone,
-            message: this.state.message
-        }
-        
-        axios.post(apiAddress, data)
-        .then( res => {
-            this.setState({ sent: true }, this.setState(defaultState))
-        })
-        .catch( () => {
-          console.log('Message not sent')
-        })
+
+        const templateId = 'sdt_contact_form';
+
+        this.sendFeedback(templateId, {subject: this.state.subject, message_html: this.state.message, from_phone: this.state.phone, reply_to: this.state.email})
+      }
+    
+      sendFeedback (templateId, variables) {
+        window.emailjs.send(
+          'gmail', templateId,
+          variables
+          ).then(res => {
+            this.setState(defaultState);
+          })
+          .catch(err => {
+	    this.setState({
+	      buttonText: 'Error: Try Again'
+	    })
+	  })
       }
 
     render() {
