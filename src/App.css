@@ -1,0 +1,158 @@
+/*
+  Utilities
+*/
+.DefaultComponentWrapper {
+  border-radius: 15px;
+  padding: 40px;
+  margin: 20px;
+  max-width: 55%;
+}
+
+/* Found in:
+  components/about.jsx
+*/
+.About {
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.About div {
+  margin: 20px;
+  max-width: 500px;
+}
+
+/* Found in:
+  components/portfolio.jsx
+*/
+
+.Gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Gallery > * {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  width: 300px;
+  padding: 25px;
+}
+
+/* Found in:
+  components/gallerycard.jsx
+*/
+.GalleryKey {
+  padding: 5px;
+}
+
+.CardImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+}
+
+.CardText {
+  height: 150px;
+}
+
+.GalleryModal {
+  place-content: center;
+  max-width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.ModalImage {
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.ModalImages {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width:100%;
+}
+
+.ModalImages::-webkit-scrollbar {
+  display: none;
+  height: 0px;
+  visibility: hidden;
+}
+
+.ModalPara {
+  width: 70%;
+  margin-left: 13%;
+  padding: 2%;
+  margin-right: auto;
+}
+
+.ModalKey {
+  width: 70%;
+  padding-left: 4%;
+  margin-left: 13%;
+  margin-right: auto;
+}
+
+.ModalLinks {
+  place-content: center;
+}
+
+.ModalLink {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: large;
+  height: 50px;
+  width: 50px;
+}
+
+/* Found in:
+  contactform.jsx
+*/
+.EmailHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.EmailHeader > * {
+  padding: 10px;
+}
+
+
+/* Found in:
+  app.js
+*/
+.App-logo {
+  padding: 30px;
+  pointer-events: none;
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-twist infinite 20s ease-in-out;
+  }
+}
+
+.App {
+  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+@keyframes App-logo-twist {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(90deg);}
+    100% {transform: rotate(0deg);}
+}
