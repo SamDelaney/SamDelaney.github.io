@@ -103,11 +103,11 @@
         "links":[
             {
                 "type": "site",
-                "url": "http://samdelaney.tech"
+                "url": "https://samdelaney.tech"
             }
         ],
         "paras": [
-            "Individually designed and built this web-based portfolio website using ReactJS with Microsoft's Office UI Fabric components. It is a static site hosted on Google Cloud Platform, but does allow users to send messages to me using EmailJS.",
+            "Individually designed and built this web-based portfolio website using ReactJS with Microsoft's Office UI Fabric components. It is a static site hosted on Github Sites (previously on Google Cloud Platform), but does allow users to send messages to me using EmailJS.",
             "Samdelaney.tech is designed to be extensible to allow for future projects such as a personal blog and an application hosting site. It currently supports dynamic theming and is designed for easy conversion to a mobile site."
         ]
     },
