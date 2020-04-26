@@ -36,3 +36,7 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### 'npm run deploy'
+
+Builds the app for production and deploys it to [samdelaney.github.io/sdt](https://samdelaney.github.io/sdt).
