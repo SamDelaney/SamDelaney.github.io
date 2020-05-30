@@ -1,9 +1,7 @@
 import React from 'react';
 import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, FontSizes, FontWeights} from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
-import DragScrollProvider from 'drag-scroll-provider';
 import {initializeIcons} from '@uifabric/icons';
-import {currentTheme} from '../App'
 
 var images = require.context("../images", true)
 initializeIcons();
@@ -17,7 +15,7 @@ class GalleryCard extends React.Component {
         root: {
             margin: 10,
             padding: 10,
-            background: currentTheme.palette.themeDarker
+            background: this.props.theme.palette.themeDarker
         }
     }
 
@@ -58,7 +56,7 @@ class GalleryCard extends React.Component {
 
     modalParaStyles = {
         root: {
-            background: currentTheme.palette.themeDarker
+            background: this.props.theme.palette.themeDarker
         }
     }
 
@@ -103,15 +101,12 @@ class GalleryCard extends React.Component {
                 ariaLabel="Close modal"
                 onClick={this._closeModal}
             />
-            <DragScrollProvider>
-                {({onMouseDown, ref}) => (
-                    <div className="ModalImages" ref={ref} onMouseDown={onMouseDown}>
-                        {this.props.data.imagepaths.map(src => (
-                            <Image {...this.imageProps} src={images(src)}/>
-                        ))}
-                    </div>
-                )}  
-            </DragScrollProvider>
+
+            <div className="ModalImages">
+                {this.props.data.imagepaths.map(src => (
+                    <Image {...this.imageProps} src={images(src)}/>
+                ))}
+            </div>
 
             <OverflowSet vertical items={this.props.data.paras} onRenderItem={this._onRenderModalPara}/>
             <Text block variant={"xLarge"} className="ModalPara" styles={this.modalParaStyles}>Relevant Skills</Text>

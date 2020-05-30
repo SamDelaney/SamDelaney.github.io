@@ -1,6 +1,5 @@
 import React from 'react';
 import {MaskedTextField, TextField, Text, Button} from 'office-ui-fabric-react';
-import {currentTheme} from '../App';
 
 const defaultState = {
     subject: "",
@@ -17,7 +16,7 @@ class ContactForm extends React.Component {
 
     buttonStyles = {
         root: {
-            background: currentTheme.palette.themeTertiary,
+            background: this.props.theme.palette.themeTertiary,
             margin: 5
         }
     }

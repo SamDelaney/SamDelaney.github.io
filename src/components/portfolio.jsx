@@ -12,23 +12,25 @@ class Portfolio extends React.Component {
         }
     }
 
+    gallery = () => (
+        <div className="Gallery">
+            <GalleryCard data={Data.samdelaney_tech} theme={this.props.theme}/>
+            <GalleryCard data={Data.wolfgang} theme={this.props.theme}/>
+            <GalleryCard data={Data.clarifeye} theme={this.props.theme}/>
+            <GalleryCard data={Data.thecombine} theme={this.props.theme}/>
+            <GalleryCard data={Data.lite} theme={this.props.theme}/>
+            <GalleryCard data={Data.fieldworks} theme={this.props.theme}/>
+        </div>  
+      );
+
     render() {
         return <div className="DefaultComponentWrapper"> 
             <Text block variant={"xLargePlus"} styles={this.portfolioHeaderStyles}>My Work</Text>
-            <Gallery />
+            <this.gallery />
         </div>
     }
 }
 
-const Gallery = () => (
-  <div className="Gallery">
-      <GalleryCard data={Data.samdelaney_tech} />
-      <GalleryCard data={Data.wolfgang} />
-      <GalleryCard data={Data.clarifeye} />
-      <GalleryCard data={Data.thecombine} />
-      <GalleryCard data={Data.lite} />
-      <GalleryCard data={Data.fieldworks}/>
-  </div>  
-);
+
 
 export default Portfolio;
