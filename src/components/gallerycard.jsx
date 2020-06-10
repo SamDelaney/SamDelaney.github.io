@@ -31,7 +31,8 @@ class GalleryCard extends React.Component {
     
         this.footerCardSectionStyles = {
             root: {
-              borderTop: '1px solid #F3F2F1'
+              borderTop: '1px solid',
+              borderTopColor: this.props.theme.palette.black
             }
         };
     
