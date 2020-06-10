@@ -21,7 +21,7 @@ class Portfolio extends React.Component {
             <GalleryCard data={Data.lite} theme={this.props.theme}/>
             <GalleryCard data={Data.fieldworks} theme={this.props.theme}/>
         </div>  
-      );
+      ); 
 
     render() {
         return <div className="DefaultComponentWrapper"> 

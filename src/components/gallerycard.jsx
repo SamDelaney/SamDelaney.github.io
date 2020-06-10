@@ -11,56 +11,58 @@ class GalleryCard extends React.Component {
         showModal: false
     }
 
-    galleryStyles = {
-        root: {
-            margin: 10,
-            padding: 10,
-            background: this.props.theme.palette.themeDarker
-        }
-    }
-
-    imageProps = {
-        imageFit: ImageFit.contain,
-        height: 300,
-        width: 400,
-        className: "ModalImage"
-    }
-
-    footerCardSectionStyles = {
-        root: {
-          borderTop: '1px solid #F3F2F1'
-        }
-    };
-
-    xIconStyles = mergeStyleSets({
-        root: {
-          position: 'absolute',
-          top: '4px',
-          right: '4px'
-        }
-      });
-
-    linkIconStyles= {
-        root: {
-            fontSize: 1500
-        }
-    }
-      
-    headerStyles = {
-        root: {
-            fontSize: FontSizes.xxLargePlus,
-            fontWeight: FontWeights.bold,
-            padding: '12px 12px 14px 24px',
-        }
-    }
-
-    modalParaStyles = {
-        root: {
-            background: this.props.theme.palette.themeDarker
-        }
-    }
+    
 
     render() {
+       this.galleryStyles = {
+            root: {
+                margin: 10,
+                padding: 10,
+                background: this.props.theme.palette.themeDarker
+            }
+        }
+    
+        this.imageProps = {
+            imageFit: ImageFit.contain,
+            height: 300,
+            width: 400,
+            className: "ModalImage"
+        }
+    
+        this.footerCardSectionStyles = {
+            root: {
+              borderTop: '1px solid #F3F2F1'
+            }
+        };
+    
+        this.xIconStyles = mergeStyleSets({
+            root: {
+              position: 'absolute',
+              top: '4px',
+              right: '4px'
+            }
+          });
+    
+        this.linkIconStyles= {
+            root: {
+                fontSize: 1500
+            }
+        }
+          
+        this.headerStyles = {
+            root: {
+                fontSize: FontSizes.xxLargePlus,
+                fontWeight: FontWeights.bold,
+                padding: '12px 12px 14px 24px',
+            }
+        }
+    
+        this.modalParaStyles = {
+            root: {
+                background: this.props.theme.palette.themeDarker
+            }
+        }
+
         return <>
         <Card onClick={this._openModal} styles={this.galleryStyles}>
             <Card.Item>
