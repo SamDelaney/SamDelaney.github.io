@@ -3,8 +3,10 @@ import {Text} from 'office-ui-fabric-react';
 import GalleryCard from './gallerycard';
 import Data from './portfoliodata.json'
 
+import './stylesheets/portfolio.css'
 
 class Portfolio extends React.Component {
+    //inlined to avoid margin collapse
     portfolioHeaderStyles = {
         root: {
             margin: 10,
@@ -30,7 +32,5 @@ class Portfolio extends React.Component {
         </div>
     }
 }
-
-
 
 export default Portfolio;

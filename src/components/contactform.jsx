@@ -1,6 +1,8 @@
 import React from 'react';
 import {MaskedTextField, TextField, Text, Button} from 'office-ui-fabric-react';
 
+import './stylesheets/contactform.css'
+
 const defaultState = {
     subject: "",
     email: "",

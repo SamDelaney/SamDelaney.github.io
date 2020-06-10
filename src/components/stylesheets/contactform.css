@@ -1,0 +1,12 @@
+/* Found in:
+  contactform.jsx
+*/
+.EmailHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .EmailHeader > * {
+    padding: 10px;
+  }

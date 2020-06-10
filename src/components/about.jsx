@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, Image} from 'office-ui-fabric-react'
 import Portrait from '../images/SamPortrait.jpg'
-import '../App.css'
+import './stylesheets/about.css'
 
 class About extends React.Component {
     render() {
@@ -9,12 +9,6 @@ class About extends React.Component {
             <Image src={Portrait} width={350}/>
             <AboutText />
         </div>
-    }
-}
-
-const _paraStyles = {
-    root: {
-        marginTop: 15
     }
 }
 
@@ -28,7 +22,7 @@ const AboutText = () => (
     <div>
         <Text block variant={"xLargePlus"}>About Me</Text>
         {_aboutParas.map(function(text) {
-            return <Text block variant={"large"} styles={_paraStyles}>{text}</Text>
+            return <Text block variant={"large"} className="AboutPara">{text}</Text>
         }
         )}
     </div>

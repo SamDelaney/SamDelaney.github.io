@@ -1,0 +1,81 @@
+/* Found in:
+  components/gallerycard.jsx
+*/
+
+/* Card */
+
+  .GalleryKey {
+    padding: 5px;
+  }
+  
+  .CardImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+  }
+  
+  .CardText {
+    height: 150px;
+  }
+
+  /* Modal */
+  
+  .GalleryModal {
+    place-content: center;
+    max-width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+    margin: 200;
+  }
+
+  .ModalHeader {
+      font-size: xx-large;
+      font-weight: bold;
+      padding: 12px 12px 14px 24px;
+  }
+  
+  .ModalXIcon {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+  }
+
+  .ModalImage {
+    margin-left: 5px;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }
+  
+  .ModalImages {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width:100%;
+  }
+  
+  .ModalPara {
+    width: 70%;
+    margin-left: 13%;
+    padding: 2%;
+    margin-right: auto;
+  }
+  
+  .ModalKey {
+    width: 70%;
+    padding-left: 4%;
+    margin-left: 13%;
+    margin-right: auto;
+  }
+  
+  .ModalLinks {
+    place-content: center;
+  }
+  
+  .ModalLink {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: large;
+    height: 50px;
+    width: 50px;
+  }
