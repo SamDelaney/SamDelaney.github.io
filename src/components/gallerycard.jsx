@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, FontSizes, FontWeights} from 'office-ui-fabric-react';
+import {Text, Image, ImageFit, OverflowSet, Modal, IconButton } from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import {initializeIcons} from '@uifabric/icons';
 import './stylesheets/gallerycard.css'
@@ -41,6 +41,10 @@ class GalleryCard extends React.Component {
             }
         }
 
+        this.galleryModal = {
+            scrollableContent: { overflow: "visible" } //prevent double scrollbar
+        }
+
         return <>
         <Card onClick={this._openModal} styles={this.galleryStyles}>
             <Card.Item>
@@ -72,7 +76,7 @@ class GalleryCard extends React.Component {
             </Card.Section>
         </Card>
 
-        <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} className="GalleryModal">
+        <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} styles={this.galleryModal} className="GalleryModal">
             <Text className="ModalHeader">{this.props.data.title}</Text>
             <IconButton
                 className="ModalXIcon"
