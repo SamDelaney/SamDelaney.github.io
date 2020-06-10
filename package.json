@@ -4,16 +4,18 @@
   "homepage": "https://samdelaney.tech",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-optional-catch-binding": "^7.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "@uifabric/react-cards": "^0.109.23",
     "axios": "^0.19.2",
-    "drag-scroll-provider": "^1.0.6",
     "office-ui-fabric-react": "^7.94.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.1"
+    "react-redux": "^7.2.0",
+    "react-scripts": "^3.3.1",
+    "redux": "^4.0.5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,9 +1,7 @@
 import React from 'react';
 import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, FontSizes, FontWeights} from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
-import DragScrollProvider from 'drag-scroll-provider';
 import {initializeIcons} from '@uifabric/icons';
-import {currentTheme} from '../App'
 
 var images = require.context("../images", true)
 initializeIcons();
@@ -13,56 +11,59 @@ class GalleryCard extends React.Component {
         showModal: false
     }
 
-    galleryStyles = {
-        root: {
-            margin: 10,
-            padding: 10,
-            background: currentTheme.palette.themeDarker
-        }
-    }
-
-    imageProps = {
-        imageFit: ImageFit.contain,
-        height: 300,
-        width: 400,
-        className: "ModalImage"
-    }
-
-    footerCardSectionStyles = {
-        root: {
-          borderTop: '1px solid #F3F2F1'
-        }
-    };
-
-    xIconStyles = mergeStyleSets({
-        root: {
-          position: 'absolute',
-          top: '4px',
-          right: '4px'
-        }
-      });
-
-    linkIconStyles= {
-        root: {
-            fontSize: 1500
-        }
-    }
-      
-    headerStyles = {
-        root: {
-            fontSize: FontSizes.xxLargePlus,
-            fontWeight: FontWeights.bold,
-            padding: '12px 12px 14px 24px',
-        }
-    }
-
-    modalParaStyles = {
-        root: {
-            background: currentTheme.palette.themeDarker
-        }
-    }
+    
 
     render() {
+       this.galleryStyles = {
+            root: {
+                margin: 10,
+                padding: 10,
+                background: this.props.theme.palette.themeDarker
+            }
+        }
+    
+        this.imageProps = {
+            imageFit: ImageFit.contain,
+            height: 300,
+            width: 400,
+            className: "ModalImage"
+        }
+    
+        this.footerCardSectionStyles = {
+            root: {
+              borderTop: '1px solid',
+              borderTopColor: this.props.theme.palette.black
+            }
+        };
+    
+        this.xIconStyles = mergeStyleSets({
+            root: {
+              position: 'absolute',
+              top: '4px',
+              right: '4px'
+            }
+          });
+    
+        this.linkIconStyles= {
+            root: {
+                fontSize: 1500
+            }
+        }
+          
+        this.headerStyles = {
+            root: {
+                fontSize: FontSizes.xxLargePlus,
+                fontWeight: FontWeights.bold,
+                padding: '12px 12px 14px 24px',
+            }
+        }
+    
+        this.modalParaStyles = {
+            root: {
+                background: this.props.theme.palette.themeDarker
+            }
+        }
+
         return <>
         <Card onClick={this._openModal} styles={this.galleryStyles}>
             <Card.Item>
@@ -103,15 +104,12 @@ class GalleryCard extends React.Component {
                 ariaLabel="Close modal"
                 onClick={this._closeModal}
             />
-            <DragScrollProvider>
-                {({onMouseDown, ref}) => (
-                    <div className="ModalImages" ref={ref} onMouseDown={onMouseDown}>
-                        {this.props.data.imagepaths.map(src => (
-                            <Image {...this.imageProps} src={images(src)}/>
-                        ))}
-                    </div>
-                )}  
-            </DragScrollProvider>
+
+            <div className="ModalImages">
+                {this.props.data.imagepaths.map(src => (
+                    <Image {...this.imageProps} src={images(src)}/>
+                ))}
+            </div>
 
             <OverflowSet vertical items={this.props.data.paras} onRenderItem={this._onRenderModalPara}/>
             <Text block variant={"xLarge"} className="ModalPara" styles={this.modalParaStyles}>Relevant Skills</Text>

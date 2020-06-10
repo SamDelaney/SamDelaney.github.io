@@ -1,6 +1,5 @@
 import React from 'react';
 import {MaskedTextField, TextField, Text, Button} from 'office-ui-fabric-react';
-import {currentTheme} from '../App';
 
 const defaultState = {
     subject: "",
@@ -14,13 +13,6 @@ const defaultState = {
 class ContactForm extends React.Component {
 
     state = defaultState;
-
-    buttonStyles = {
-        root: {
-            background: currentTheme.palette.themeTertiary,
-            margin: 5
-        }
-    }
 
     formSubmit = (e) => {
         e.preventDefault()
@@ -49,6 +41,13 @@ class ContactForm extends React.Component {
       }
 
     render() {
+        this.buttonStyles = {
+            root: {
+                background: this.props.theme.palette.themeTertiary,
+                margin: 5
+            }
+        }
+        
         return (
             <div className="DefaultComponentWrapper">
                 <Text variant={"xLargePlus"}>Contact Me</Text>

@@ -1,36 +1,42 @@
 import React from 'react';
 import Logo from './images/Logo3.svg';
 import './App.css';
-import { Image, loadTheme } from 'office-ui-fabric-react';
+import { Image, loadTheme, IconButton } from 'office-ui-fabric-react';
 import About from './components/about';
 import Portfolio from './components/portfolio';
 import {darkTheme, lightTheme} from './themes';
 import ContactForm from './components/contactform';
 
-export var currentTheme = darkTheme;
+class App extends React.Component {
 
-const appStyles = {
-    background: currentTheme.palette.white,
-    color: currentTheme.palette.black
-}
+  state = {
+    theme: darkTheme
+  }
 
-export function ToggleTheme() {
-  currentTheme = currentTheme === darkTheme ? lightTheme : darkTheme
-}
+  ToggleTheme = () => {
+    this.setState((state, ) => { return {theme: state.theme === darkTheme ? lightTheme : darkTheme } } );
+    loadTheme(this.state.theme);
+  }
 
-function App() {
-  loadTheme(currentTheme);
+  render() {
 
-  return (
-    <div>
-      <div style={appStyles} className="App">
-        <About />
-        <Portfolio />
-        <ContactForm />
-        <Image src={Logo} width={75} className="App-logo" />
-      </div>
-    </div>
-  );
+    loadTheme(this.state.theme);
+
+    this.appStyles = {
+      background: this.state.theme.palette.white,
+      color: this.state.theme.palette.black
+    }
+    
+    return (
+        <div style={this.appStyles} className="App">
+          <About />
+          <Portfolio theme={this.state.theme}/>
+          <ContactForm theme={this.state.theme}/>
+          <Image src={Logo} width={75} className="App-logo" />
+          <IconButton iconProps={{iconName: "Light", style: {fontSize: 40}}} className="ThemeSwitch" onClick={this.ToggleTheme}></IconButton>
+        </div>
+    );
+  }
 
 }
 
