@@ -1,11 +1,17 @@
 import React from 'react';
-import Logo from './images/Logo3.svg';
-import './App.css';
+
+//ui libraries
 import { Image, loadTheme, IconButton } from 'office-ui-fabric-react';
+
+//custom imports
 import About from './components/about';
 import Portfolio from './components/portfolio';
 import {darkTheme, lightTheme} from './themes';
 import ContactForm from './components/contactform';
+
+//additional files
+import Logo from './images/Logo3.svg';
+import './App.css';
 
 class App extends React.Component {
 

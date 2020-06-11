@@ -1,5 +1,9 @@
 import React from 'react'
+
+//ui libraries
 import {Text, Image} from 'office-ui-fabric-react'
+
+//additional files
 import Portrait from '../images/SamPortrait.jpg'
 import './stylesheets/about.css'
 

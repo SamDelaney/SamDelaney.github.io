@@ -1,11 +1,17 @@
 import React from 'react';
+
+//functional libraries
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+
+//custom imports
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 import rootReducer from './rootReducer';
+
+//additional files
+import './index.css';
 
 const store = createStore(rootReducer);
 

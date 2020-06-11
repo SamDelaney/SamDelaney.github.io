@@ -1,9 +1,11 @@
 import React from 'react';
+
+//ui libraries
 import {Text, Image, ImageFit, OverflowSet, Modal, IconButton, Link } from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import {initializeIcons} from '@uifabric/icons';
 
-
+//additional files
 import './stylesheets/gallerycard.css'
 
 var images = require.context("../images", true)
