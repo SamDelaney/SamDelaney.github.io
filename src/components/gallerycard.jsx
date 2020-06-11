@@ -1,7 +1,12 @@
 import React from 'react';
-import {Text, Image, ImageFit, OverflowSet, Modal, mergeStyleSets, IconButton, FontSizes, FontWeights} from 'office-ui-fabric-react';
+
+//ui libraries
+import {Text, Image, ImageFit, OverflowSet, Modal, IconButton, Link } from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import {initializeIcons} from '@uifabric/icons';
+
+//additional files
+import './stylesheets/gallerycard.css'
 
 var images = require.context("../images", true)
 initializeIcons();
@@ -10,8 +15,6 @@ class GalleryCard extends React.Component {
     state = {
         showModal: false
     }
-
-    
 
     render() {
        this.galleryStyles = {
@@ -36,32 +39,14 @@ class GalleryCard extends React.Component {
             }
         };
     
-        this.xIconStyles = mergeStyleSets({
-            root: {
-              position: 'absolute',
-              top: '4px',
-              right: '4px'
-            }
-          });
-    
-        this.linkIconStyles= {
-            root: {
-                fontSize: 1500
-            }
-        }
-          
-        this.headerStyles = {
-            root: {
-                fontSize: FontSizes.xxLargePlus,
-                fontWeight: FontWeights.bold,
-                padding: '12px 12px 14px 24px',
-            }
-        }
-    
         this.modalParaStyles = {
             root: {
                 background: this.props.theme.palette.themeDarker
             }
+        }
+
+        this.galleryModal = {
+            scrollableContent: { overflow: "visible" } //prevent double scrollbar
         }
 
         return <>
@@ -86,7 +71,7 @@ class GalleryCard extends React.Component {
                     {this.props.data.paras[0]}
                 </Text>
             </Card.Section>
-            <Card.Item grow={1}>
+            <Card.Item>
                 <span/>
             </Card.Item>
 
@@ -95,11 +80,10 @@ class GalleryCard extends React.Component {
             </Card.Section>
         </Card>
 
-        <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} className="GalleryModal" margin={200}>
-            <Text styles={this.headerStyles}>{this.props.data.title}</Text>
-            <span/>
+        <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} styles={this.galleryModal} className="GalleryModal">
+            <Text className="ModalHeader" >{this.props.data.title}</Text>
             <IconButton
-                styles={this.xIconStyles}
+                className="ModalXIcon"
                 iconProps={{ iconName: 'Cancel' }}
                 ariaLabel="Close modal"
                 onClick={this._closeModal}
@@ -127,6 +111,7 @@ class GalleryCard extends React.Component {
         this.setState({showModal: true});
     }
 
+    //renders project skill highlights
     _onRenderKey = (item) => {
         return (
         <div className="GalleryKey">
@@ -151,7 +136,10 @@ class GalleryCard extends React.Component {
             icon = "Code";
 
         return(
-            <IconButton iconProps={{iconName: icon, style: {fontSize: 40}}} href={link.url} className="ModalLink">{link.url}</IconButton>
+            <div className="ModalLink">
+                <IconButton iconProps={{iconName: icon, style: {fontSize: 40}}} href={link.url} className="ModalLinkIcon">{link.url}</IconButton>
+                <Link href={link.url} className="ModalLinkText">{link.url}</Link>
+            </div>
         )
     }
 

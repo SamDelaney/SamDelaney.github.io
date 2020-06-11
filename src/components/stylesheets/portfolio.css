@@ -1,0 +1,17 @@
+/* Found in:
+  components/portfolio.jsx
+*/
+
+.Gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+  
+.Gallery > * {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    width: 300px;
+    padding: 25px;
+}

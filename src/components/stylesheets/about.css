@@ -1,0 +1,18 @@
+/* Found in:
+  components/about.jsx
+*/
+.About {
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    margin: 20px;
+  }
+  
+  .About div {
+    margin: 20px;
+    max-width: 500px;
+  }
+  
+  .AboutPara {
+    margin-top: 15px;
+  }
