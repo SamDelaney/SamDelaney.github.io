@@ -32,13 +32,13 @@
   .ModalHeader {
       font-size: xx-large;
       font-weight: bold;
-      padding: 12px 12px 14px 24px;
+      margin-left: 24px;
   }
   
   .ModalXIcon {
       position: absolute;
-      top: 4px;
-      right: 4px;
+      top: 6px;
+      right: 6px;
   }
 
   .ModalImage {
@@ -52,6 +52,7 @@
     flex-direction: row;
     overflow-x: scroll;
     width:100%;
+    margin-top: 12px;
   }
   
   .ModalPara {
@@ -71,11 +72,16 @@
   .ModalLinks {
     place-content: center;
   }
-  
-  .ModalLink {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: large;
+
+  .ModalLinkIcon {
+    margin-left: 20px;
+    margin-right: 2px;
     height: 50px;
     width: 50px;
+  }
+
+  .ModalLinkText {
+      font-size: medium;
+      padding-right: 20px;
+      line-height: 48px;
   }

@@ -1,7 +1,9 @@
 import React from 'react';
-import {Text, Image, ImageFit, OverflowSet, Modal, IconButton } from 'office-ui-fabric-react';
+import {Text, Image, ImageFit, OverflowSet, Modal, IconButton, Link } from 'office-ui-fabric-react';
 import {Card} from '@uifabric/react-cards';
 import {initializeIcons} from '@uifabric/icons';
+
+
 import './stylesheets/gallerycard.css'
 
 var images = require.context("../images", true)
@@ -77,7 +79,7 @@ class GalleryCard extends React.Component {
         </Card>
 
         <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} styles={this.galleryModal} className="GalleryModal">
-            <Text className="ModalHeader">{this.props.data.title}</Text>
+            <Text className="ModalHeader" >{this.props.data.title}</Text>
             <IconButton
                 className="ModalXIcon"
                 iconProps={{ iconName: 'Cancel' }}
@@ -107,6 +109,7 @@ class GalleryCard extends React.Component {
         this.setState({showModal: true});
     }
 
+    //renders project skill highlights
     _onRenderKey = (item) => {
         return (
         <div className="GalleryKey">
@@ -131,7 +134,10 @@ class GalleryCard extends React.Component {
             icon = "Code";
 
         return(
-            <IconButton iconProps={{iconName: icon, style: {fontSize: 40}}} href={link.url} className="ModalLink">{link.url}</IconButton>
+            <div className="ModalLink">
+                <IconButton iconProps={{iconName: icon, style: {fontSize: 40}}} href={link.url} className="ModalLinkIcon">{link.url}</IconButton>
+                <Link href={link.url} className="ModalLinkText">{link.url}</Link>
+            </div>
         )
     }
 
