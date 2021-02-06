@@ -85,7 +85,7 @@
         ]
     },
     "samdelaney_tech" : {
-        "title" : "SamDelaney.tech",
+        "title" : "My Portfolio",
         "date" :"Feb-Mar 2020",
         "keys": [
             "Javascript",
@@ -103,7 +103,7 @@
         "links":[
             {
                 "type": "site",
-                "url": "https://samdelaney.tech"
+                "url": "https://samdelaney.github.io/sdt"
             }
         ],
         "paras": [
@@ -175,6 +175,34 @@
         "paras": [
             "Project Manager at SIL International – worked closely with a UX designer, owner and several consultants to design a web-based rapid word collection tool, accounting for users with limited written literacy, computer literacy, or technology. Continued managing, instructing and working with a team of 6 interns to build it within 3 months. Ran numerous user tests with clients to minimize the app's learning curve.",  
 		    "The Combine was built using Typescript with React/Redux, MaterialUI and Jest, as well as a C# based REST API connected to a Mongo database and tested through NUnit. It uses Redux for robust internationalization, and has been localized for several different common glossing languages. TheCombine also works on a variety of browsers and devices without formatting issues."
+        ]
+    },
+    "paratext": {
+        "title": "Paratext",
+        "date": "Sep 2020 - Present",
+        "keys": [
+            "C#",
+            "HTML",
+            "Javascript",
+            "Windows Forms"
+        ],
+        "imagepaths": [
+            "./ptxlitelogo.png",
+            "./Features_shot_PT9.png",
+            "./Wordlist-power.png",
+            "./pt75-Parallel-eng.png",
+            "./9-BT.png"
+        ],
+        "links":[
+            {
+                "type": "site",
+                "url": "https://paratext.org"
+            }
+        ],
+        "paras": [
+            "'Software Developer - Paratext' at SIL International - one of 6 full time developers on Paratext: the world’s leading software application for translation, checking, and revision of the Bible from the original text into the languages of the world.",
+            "One of SIL's flagship applications, Paratext supplies textual translators with a multitude of powerful tools, including custom version control, live collaboration, AI-aided auto-translation, cross reference management, interlinearization, and much more.",
+            "As a full-stack developer on a small team, my duties range from developing UI components, to optimizing client-side algorithms, to handling data storage, and even to communicating directly with users. Writing unit tests, reviewing code, and reporting new issues all make their way into my daily tasks as part of our agile development process. " 
         ]
     }
 }
