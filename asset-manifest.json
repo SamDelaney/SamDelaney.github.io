@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/sdt/static/css/main.2b0c4957.chunk.css",
-    "main.js": "/sdt/static/js/main.7113ba6b.chunk.js",
-    "main.js.map": "/sdt/static/js/main.7113ba6b.chunk.js.map",
+    "main.js": "/sdt/static/js/main.416abb08.chunk.js",
+    "main.js.map": "/sdt/static/js/main.416abb08.chunk.js.map",
     "runtime-main.js": "/sdt/static/js/runtime-main.de49f6e3.js",
     "runtime-main.js.map": "/sdt/static/js/runtime-main.de49f6e3.js.map",
-    "static/js/2.0fb3f0b2.chunk.js": "/sdt/static/js/2.0fb3f0b2.chunk.js",
-    "static/js/2.0fb3f0b2.chunk.js.map": "/sdt/static/js/2.0fb3f0b2.chunk.js.map",
+    "static/js/2.af0ff338.chunk.js": "/sdt/static/js/2.af0ff338.chunk.js",
+    "static/js/2.af0ff338.chunk.js.map": "/sdt/static/js/2.af0ff338.chunk.js.map",
     "index.html": "/sdt/index.html",
-    "precache-manifest.d95b806ba993bc41cdaec5089eab45d6.js": "/sdt/precache-manifest.d95b806ba993bc41cdaec5089eab45d6.js",
+    "precache-manifest.e5dd62910d45f3f4f37997cb8818680d.js": "/sdt/precache-manifest.e5dd62910d45f3f4f37997cb8818680d.js",
     "service-worker.js": "/sdt/service-worker.js",
     "static/css/main.2b0c4957.chunk.css.map": "/sdt/static/css/main.2b0c4957.chunk.css.map",
-    "static/js/2.0fb3f0b2.chunk.js.LICENSE.txt": "/sdt/static/js/2.0fb3f0b2.chunk.js.LICENSE.txt",
+    "static/js/2.af0ff338.chunk.js.LICENSE.txt": "/sdt/static/js/2.af0ff338.chunk.js.LICENSE.txt",
+    "static/media/9-BT.png": "/sdt/static/media/9-BT.3eace884.png",
     "static/media/ClarifEyeDesc.png": "/sdt/static/media/ClarifEyeDesc.4f0da2bd.png",
     "static/media/ClarifEyeIcon.png": "/sdt/static/media/ClarifEyeIcon.70f24822.png",
     "static/media/ClarifEyeRead.png": "/sdt/static/media/ClarifEyeRead.761b018a.png",
@@ -23,6 +24,7 @@
     "static/media/CombineReview.PNG": "/sdt/static/media/CombineReview.b0884db1.PNG",
     "static/media/CombineSemDoms.PNG": "/sdt/static/media/CombineSemDoms.d2d375fd.PNG",
     "static/media/DiscourseChart.png": "/sdt/static/media/DiscourseChart.4f7a819f.png",
+    "static/media/Features_shot_PT9.png": "/sdt/static/media/Features_shot_PT9.11adfd50.png",
     "static/media/FlexIcon.png": "/sdt/static/media/FlexIcon.8d6c26b7.png",
     "static/media/FlexTCCT.PNG": "/sdt/static/media/FlexTCCT.83ad3dfd.PNG",
     "static/media/LITEExample1.PNG": "/sdt/static/media/LITEExample1.42c5f7c7.PNG",
@@ -38,13 +40,18 @@
     "static/media/WGGameplay1.PNG": "/sdt/static/media/WGGameplay1.28cfb05f.PNG",
     "static/media/WGStart.PNG": "/sdt/static/media/WGStart.f610db8a.PNG",
     "static/media/WolfgangIcon.png": "/sdt/static/media/WolfgangIcon.685a8308.png",
+    "static/media/Wordlist-power.png": "/sdt/static/media/Wordlist-power.6ff04f7a.png",
     "static/media/combinelogin.PNG": "/sdt/static/media/combinelogin.b5315278.PNG",
-    "static/media/sdtPlaceholder.PNG": "/sdt/static/media/sdtPlaceholder.70c0955e.PNG"
+    "static/media/cropped-PT9-web-banner.png": "/sdt/static/media/cropped-PT9-web-banner.f5759542.png",
+    "static/media/pt75-Parallel-eng.png": "/sdt/static/media/pt75-Parallel-eng.f527478a.png",
+    "static/media/ptxlitelogo.png": "/sdt/static/media/ptxlitelogo.50e13f71.png",
+    "static/media/sdtPlaceholder.PNG": "/sdt/static/media/sdtPlaceholder.70c0955e.PNG",
+    "static/media/uncropped-PT9-web-banner.png": "/sdt/static/media/uncropped-PT9-web-banner.5544c6cb.png"
   },
   "entrypoints": [
     "static/js/runtime-main.de49f6e3.js",
-    "static/js/2.0fb3f0b2.chunk.js",
+    "static/js/2.af0ff338.chunk.js",
     "static/css/main.2b0c4957.chunk.css",
-    "static/js/main.7113ba6b.chunk.js"
+    "static/js/main.416abb08.chunk.js"
   ]
 }

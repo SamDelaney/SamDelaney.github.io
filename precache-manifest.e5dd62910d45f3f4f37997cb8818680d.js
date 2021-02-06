@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "43e6b8c3ef8f7c9ab34d830e7e39bec8",
+    "revision": "e778809eb4198862c095ed9a62ef18ac",
     "url": "/sdt/index.html"
   },
   {
-    "revision": "3d8141d944998345bab4",
+    "revision": "8d537b26d663e8a2d5fc",
     "url": "/sdt/static/css/main.2b0c4957.chunk.css"
   },
   {
-    "revision": "72d3326dfceb08a5f110",
-    "url": "/sdt/static/js/2.0fb3f0b2.chunk.js"
+    "revision": "4bf477744d95a216ddbb",
+    "url": "/sdt/static/js/2.af0ff338.chunk.js"
   },
   {
     "revision": "0bdc4f0d8b3d84ae6a73bb9902b479ee",
-    "url": "/sdt/static/js/2.0fb3f0b2.chunk.js.LICENSE.txt"
+    "url": "/sdt/static/js/2.af0ff338.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3d8141d944998345bab4",
-    "url": "/sdt/static/js/main.7113ba6b.chunk.js"
+    "revision": "8d537b26d663e8a2d5fc",
+    "url": "/sdt/static/js/main.416abb08.chunk.js"
   },
   {
     "revision": "afacb673443dbd676298",
     "url": "/sdt/static/js/runtime-main.de49f6e3.js"
+  },
+  {
+    "revision": "3eace8849d135a2276c8a789061bbe6a",
+    "url": "/sdt/static/media/9-BT.3eace884.png"
   },
   {
     "revision": "4f0da2bde9b9046a1198506b73277b3d",
@@ -66,6 +70,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4f7a819f622de722f625a31510689c5b",
     "url": "/sdt/static/media/DiscourseChart.4f7a819f.png"
+  },
+  {
+    "revision": "11adfd50f1a8e490e821767cb59a4866",
+    "url": "/sdt/static/media/Features_shot_PT9.11adfd50.png"
   },
   {
     "revision": "8d6c26b79bc5992bc03d9e76d4e3cac0",
@@ -128,11 +136,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sdt/static/media/WolfgangIcon.685a8308.png"
   },
   {
+    "revision": "6ff04f7a51b665cb4d4db100c1ff7743",
+    "url": "/sdt/static/media/Wordlist-power.6ff04f7a.png"
+  },
+  {
     "revision": "b531527881e8441e8c6e174b9d125efe",
     "url": "/sdt/static/media/combinelogin.b5315278.PNG"
   },
   {
+    "revision": "f5759542e379b965e8f5ff7babf7240a",
+    "url": "/sdt/static/media/cropped-PT9-web-banner.f5759542.png"
+  },
+  {
+    "revision": "f527478a58f2699c62bb43a4b34ba421",
+    "url": "/sdt/static/media/pt75-Parallel-eng.f527478a.png"
+  },
+  {
+    "revision": "50e13f717bc77cc6ce3497870f1840a8",
+    "url": "/sdt/static/media/ptxlitelogo.50e13f71.png"
+  },
+  {
     "revision": "70c0955eba3a9915a5d87fa7403e6e03",
     "url": "/sdt/static/media/sdtPlaceholder.70c0955e.PNG"
+  },
+  {
+    "revision": "5544c6cb9f7270056505bc30937665f8",
+    "url": "/sdt/static/media/uncropped-PT9-web-banner.5544c6cb.png"
   }
 ]);
