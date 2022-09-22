@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/sdt/static/css/main.2b0c4957.chunk.css",
-    "main.js": "/sdt/static/js/main.416abb08.chunk.js",
-    "main.js.map": "/sdt/static/js/main.416abb08.chunk.js.map",
+    "main.css": "/sdt/static/css/main.b9b65dc6.chunk.css",
+    "main.js": "/sdt/static/js/main.e77fbd46.chunk.js",
+    "main.js.map": "/sdt/static/js/main.e77fbd46.chunk.js.map",
     "runtime-main.js": "/sdt/static/js/runtime-main.de49f6e3.js",
     "runtime-main.js.map": "/sdt/static/js/runtime-main.de49f6e3.js.map",
-    "static/js/2.af0ff338.chunk.js": "/sdt/static/js/2.af0ff338.chunk.js",
-    "static/js/2.af0ff338.chunk.js.map": "/sdt/static/js/2.af0ff338.chunk.js.map",
+    "static/js/2.ba51b9c7.chunk.js": "/sdt/static/js/2.ba51b9c7.chunk.js",
+    "static/js/2.ba51b9c7.chunk.js.map": "/sdt/static/js/2.ba51b9c7.chunk.js.map",
     "index.html": "/sdt/index.html",
-    "precache-manifest.e5dd62910d45f3f4f37997cb8818680d.js": "/sdt/precache-manifest.e5dd62910d45f3f4f37997cb8818680d.js",
+    "precache-manifest.09b28cfb87be0f9a552a63c722b2f9bb.js": "/sdt/precache-manifest.09b28cfb87be0f9a552a63c722b2f9bb.js",
     "service-worker.js": "/sdt/service-worker.js",
-    "static/css/main.2b0c4957.chunk.css.map": "/sdt/static/css/main.2b0c4957.chunk.css.map",
-    "static/js/2.af0ff338.chunk.js.LICENSE.txt": "/sdt/static/js/2.af0ff338.chunk.js.LICENSE.txt",
+    "static/css/main.b9b65dc6.chunk.css.map": "/sdt/static/css/main.b9b65dc6.chunk.css.map",
+    "static/js/2.ba51b9c7.chunk.js.LICENSE.txt": "/sdt/static/js/2.ba51b9c7.chunk.js.LICENSE.txt",
     "static/media/9-BT.png": "/sdt/static/media/9-BT.3eace884.png",
     "static/media/ClarifEyeDesc.png": "/sdt/static/media/ClarifEyeDesc.4f0da2bd.png",
     "static/media/ClarifEyeIcon.png": "/sdt/static/media/ClarifEyeIcon.70f24822.png",
@@ -32,6 +32,7 @@
     "static/media/LITEFunction.png": "/sdt/static/media/LITEFunction.e0ef72f0.png",
     "static/media/LITEIcon1.png": "/sdt/static/media/LITEIcon1.00a5dcd9.png",
     "static/media/Logo3.svg": "/sdt/static/media/Logo3.d03ac0d0.svg",
+    "static/media/ProlificTeaserPage.png": "/sdt/static/media/ProlificTeaserPage.ec29e9d0.png",
     "static/media/SDTDark.PNG": "/sdt/static/media/SDTDark.42bb2437.PNG",
     "static/media/SDTLight.PNG": "/sdt/static/media/SDTLight.3ae9ed0b.PNG",
     "static/media/SamPortrait.jpg": "/sdt/static/media/SamPortrait.49250cda.jpg",
@@ -43,6 +44,7 @@
     "static/media/Wordlist-power.png": "/sdt/static/media/Wordlist-power.6ff04f7a.png",
     "static/media/combinelogin.PNG": "/sdt/static/media/combinelogin.b5315278.PNG",
     "static/media/cropped-PT9-web-banner.png": "/sdt/static/media/cropped-PT9-web-banner.f5759542.png",
+    "static/media/prolific_monogram.svg": "/sdt/static/media/prolific_monogram.6d0c713b.svg",
     "static/media/pt75-Parallel-eng.png": "/sdt/static/media/pt75-Parallel-eng.f527478a.png",
     "static/media/ptxlitelogo.png": "/sdt/static/media/ptxlitelogo.50e13f71.png",
     "static/media/sdtPlaceholder.PNG": "/sdt/static/media/sdtPlaceholder.70c0955e.PNG",
@@ -50,8 +52,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.de49f6e3.js",
-    "static/js/2.af0ff338.chunk.js",
-    "static/css/main.2b0c4957.chunk.css",
-    "static/js/main.416abb08.chunk.js"
+    "static/js/2.ba51b9c7.chunk.js",
+    "static/css/main.b9b65dc6.chunk.css",
+    "static/js/main.e77fbd46.chunk.js"
   ]
 }
