@@ -179,7 +179,7 @@
     },
     "paratext": {
         "title": "Paratext",
-        "date": "Sep 2020 - Present",
+        "date": "Sep 2020 - Dec 2021",
         "keys": [
             "C#",
             "HTML",
@@ -203,6 +203,28 @@
             "'Software Developer - Paratext' at SIL International - one of 6 full time developers on Paratext: the world’s leading software application for translation, checking, and revision of the Bible from the original text into the languages of the world.",
             "One of SIL's flagship applications, Paratext supplies textual translators with a multitude of powerful tools, including custom version control, live collaboration, AI-aided auto-translation, cross reference management, interlinearization, and much more.",
             "As a full-stack developer on a small team, my duties range from developing UI components, to optimizing client-side algorithms, to handling data storage, and even to communicating directly with users. Writing unit tests, reviewing code, and reporting new issues all make their way into my daily tasks as part of our agile development process. " 
+        ]
+    },
+    "prolific": {
+        "title": "Prolific.Art",
+        "date": "Dec 2021 - Present",
+        "keys": [
+            "Haskell",
+            "TypeScript",
+            "Cardano"
+        ],
+        "imagepaths": [
+            "./prolific_monogram.svg",
+            "./ProlificTeaserPage.png"
+        ],
+        "links": [
+            {
+                "type": "site",
+                "url": "https://prolific.art"
+            }
+        ],
+        "paras": [
+            "Smart Contract Developer at Ikigai Technologies - First smart contract developer on Prolific.Art, tasked with specifying contract design, coordinating development with contracting firm, hiring, development, and consultation with other projects."
         ]
     }
 }

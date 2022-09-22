@@ -21,6 +21,7 @@ class Portfolio extends React.Component {
 
     gallery = () => (
         <div className="Gallery">
+            <GalleryCard data={Data.prolific} theme={this.props.theme}/>
             <GalleryCard data={Data.paratext} theme={this.props.theme}/>
             <GalleryCard data={Data.samdelaney_tech} theme={this.props.theme}/>
             <GalleryCard data={Data.wolfgang} theme={this.props.theme}/>

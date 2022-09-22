@@ -16,7 +16,7 @@ class About extends React.Component {
     }
 }
 
-const _aboutParas = ["I am a 23-year-old linguistically educated software developer from Seattle Washington with a B.S. in Computer Science and a B.A. in Applied Linguistics from Trinity Western University in Langley, British Columbia.",
+const _aboutParas = ["I am a 25-year-old linguistically educated software developer from Seattle Washington with a B.S. in Computer Science and a B.A. in Applied Linguistics from Trinity Western University in Langley, British Columbia.",
  "Programming is both my profession and my passion, so I have had the opportunity to reach fluency in a wide range of software development skills for many types of applications on a variety of platforms.",
  "In addition to my technical abilities, my experience as a leader has enabled me to develop ideal team qualities: selflessness, communicative skills and decisive autonomy. I believe I can prove myself valuable to any team, in any role.",
  "Please let me know if you're interested in working with me, I'd love to hear from you."
