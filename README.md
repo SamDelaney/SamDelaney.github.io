@@ -39,4 +39,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### 'npm run deploy'
 
-Builds the app for production and deploys it to [samdelaney.github.io/sdt](https://samdelaney.github.io/sdt).
+Builds the app for production and deploys it to [samdelaney.github.io](https://samdelaney.github.io).

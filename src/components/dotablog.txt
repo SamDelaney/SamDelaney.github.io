@@ -1,0 +1,10 @@
+import React from 'react';
+import {Text} from 'office-ui-fabric-react';
+
+const DotaBlog = () => (
+    <div>
+        <Text block variant={"xLargePlus"}>Dota Blog</Text>
+    </div>
+);
+
+export default DotaBlog;

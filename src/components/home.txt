@@ -1,0 +1,23 @@
+import React from 'react';
+
+//custom imports
+import About from './about';
+import Portfolio from './portfolio';
+import ContactForm from './contactform';
+
+
+class Home extends React.Component {
+
+  render() {
+    return (
+        <div>
+          <About />
+          <Portfolio theme={this.state.theme}/>
+          <ContactForm theme={this.state.theme}/>
+        </div>
+    );
+  }
+
+}
+
+export default Home;

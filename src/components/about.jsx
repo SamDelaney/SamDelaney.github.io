@@ -16,7 +16,15 @@ class About extends React.Component {
     }
 }
 
-const _aboutParas = ["I am a 25-year-old linguistically educated software developer from Seattle Washington with a B.S. in Computer Science and a B.A. in Applied Linguistics from Trinity Western University in Langley, British Columbia.",
+function calculateAge(birthday) { // birthday is a date
+  var ageDifMs = Date.now() - birthday;
+  var ageDate = new Date(ageDifMs); // miliseconds from epoch
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
+const age = calculateAge(new Date(1997, 9, 3))
+
+const _aboutParas = ["I am a " + age + "-year-old linguistically educated software developer from Seattle Washington with a B.S. in Computer Science and a B.A. in Applied Linguistics from Trinity Western University in Langley, British Columbia.",
  "Programming is both my profession and my passion, so I have had the opportunity to reach fluency in a wide range of software development skills for many types of applications on a variety of platforms.",
  "In addition to my technical abilities, my experience as a leader has enabled me to develop ideal team qualities: selflessness, communicative skills and decisive autonomy. I believe I can prove myself valuable to any team, in any role.",
  "Please let me know if you're interested in working with me, I'd love to hear from you."
