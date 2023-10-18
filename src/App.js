@@ -16,7 +16,7 @@ import './App.css';
 class App extends React.Component {
 
   state = {
-    theme: darkTheme
+    theme: lightTheme
   }
 
   ToggleTheme = () => {

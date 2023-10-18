@@ -19,8 +19,6 @@ class GalleryCard extends React.Component {
     render() {
        this.galleryStyles = {
             root: {
-                margin: 10,
-                padding: 10,
                 background: this.props.theme.palette.themeDarker
             }
         }
@@ -50,7 +48,7 @@ class GalleryCard extends React.Component {
         }
 
         return <>
-        <Card onClick={this._openModal} styles={this.galleryStyles}>
+        <Card onClick={this._openModal} className='Card' styles={this.galleryStyles}>
             <Card.Item>
                 <Text variant="large" >
                     {this.props.data.title}
@@ -81,6 +79,7 @@ class GalleryCard extends React.Component {
         </Card>
 
         <Modal isOpen={this.state.showModal} onDismiss={this._closeModal} styles={this.galleryModal} className="GalleryModal">
+            <div className='ModalSpacer'/>
             <Text className="ModalHeader" >{this.props.data.title}</Text>
             <IconButton
                 className="ModalXIcon"

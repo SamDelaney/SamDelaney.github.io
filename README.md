@@ -4,9 +4,7 @@ A static web-based portfolio website using ReactJS with Microsoft's Office UI Fa
 Designed to be extensible to allow for future projects such as a personal blog and an application hosting site.
 Currently supports dynamic theming and is designed for easy conversion to a mobile site.
 
-Can be found at [samdelaney.tech](https://samdelaney.tech) and at [samdelaney.github.io/sdt](https://samdelaney.github.io/sdt)
-
-
+Can be found at [samdelaney.github.io](https://samdelaney.github.io)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
