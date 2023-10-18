@@ -103,7 +103,7 @@
         "links":[
             {
                 "type": "site",
-                "url": "https://samdelaney.github.io/sdt"
+                "url": "https://samdelaney.github.io/"
             }
         ],
         "paras": [
@@ -245,6 +245,28 @@
       "paras": [
         "As the Solutions Architect for PWMOTB, I am responsible for all engineering of the site and user database used by PWMOTB for registering users, tracking donations, distributing media, and coordinating events & lessons.",
         "Given the limited amount of time I could commit to the project as a volunteer I chose to build the site with accessibility to less technical volunteers in mind. The front end is designed and hosted through Webflow, using API calls to a Supabase database for a minimal backend."
+      ]
+    },
+    "reflex": {
+      "title": "Reflex",
+      "date": "Apr-Sep 2020",
+      "imagepaths": ["./HorizontalLogo.png"],
+      "keys": [
+        "React",
+        "TypeScript",
+        "Design",
+        "XSLT"
+      ],
+      "links": [{
+        "type": "site",
+        "url": "https://samdelaney.github.io/reflex"
+      },
+      {
+        "type": "repo",
+        "url": "https://github.com/samdelaney/reflex"
+      }],
+      "paras": ["Post-graduation I decided to continue my work on a project I had started as a directed study. Reflex was the result: an app which allowed authors to copy interlinear texts directly out of FieldWorks and used XSLT to convert the result into cleanly formatted HTML.",
+        "My experience with React and Typescript allowed me to create a much more presentable and accessible version of the product by publishing the web interface to Github pages with Github actions."
       ]
     }
 }
