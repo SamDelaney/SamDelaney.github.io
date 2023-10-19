@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a317a01a.css",
-    "main.js": "/static/js/main.4ce763cb.js",
+    "main.css": "/static/css/main.4b55b0e6.css",
+    "main.js": "/static/js/main.98d03851.js",
     "static/media/ClarifEyeRead.png": "/static/media/ClarifEyeRead.29f7ebac9bffdd0f9437.png",
     "static/media/ClarifEyeDesc.png": "/static/media/ClarifEyeDesc.f2e2c2a0e232e194d266.png",
     "static/media/PWMB Rainer White No Background.png": "/static/media/PWMB Rainer White No Background.affb9f5b19db1a6de53a.png",
@@ -9,9 +9,12 @@
     "static/media/WGGameplay1.PNG": "/static/media/WGGameplay1.9c532af5a5f3baf6096b.PNG",
     "static/media/Features_shot_PT9.png": "/static/media/Features_shot_PT9.1c72febc36eb3040e3a2.png",
     "static/media/SamPortrait.jpg": "/static/media/SamPortrait.4bb1ba97f10add3e04c1.jpg",
+    "static/media/GrabbitLanding.png": "/static/media/GrabbitLanding.164f70f0b64b7348f847.png",
     "static/media/SDTLight.PNG": "/static/media/SDTLight.895ef3551b56532ed2e1.PNG",
     "static/media/SDTDark.PNG": "/static/media/SDTDark.2e3bf5eb31f44ebcc0c6.PNG",
     "static/media/CombineChars.PNG": "/static/media/CombineChars.4a2ec11e99fb787ffe52.PNG",
+    "static/media/pwmbconnect.png": "/static/media/pwmbconnect.491c1937dea067b2af92.png",
+    "static/media/pwmblanding.png": "/static/media/pwmblanding.c3c0d1d40001676d72ae.png",
     "static/media/DiscourseChart.png": "/static/media/DiscourseChart.e978a0585bff7f56ebc1.png",
     "static/media/LITEIcon1.png": "/static/media/LITEIcon1.c4e698d3286c19e22111.png",
     "static/media/pt75-Parallel-eng.png": "/static/media/pt75-Parallel-eng.b99c91f3c41f8cff01f9.png",
@@ -32,6 +35,7 @@
     "static/media/LITEFunction.png": "/static/media/LITEFunction.7411e6cedfa41b2bce9d.png",
     "static/media/sdtPlaceholder.PNG": "/static/media/sdtPlaceholder.b32914ad3e49509353b0.PNG",
     "static/media/HorizontalLogo.png": "/static/media/HorizontalLogo.a29eff0cdb8d7fe07865.png",
+    "static/media/GrabbitMint.png": "/static/media/GrabbitMint.4d20e02bde7163d2faf7.png",
     "static/media/GrabbitGradient_transparent.png": "/static/media/GrabbitGradient_transparent.0796fc61afe6a3e7ab35.png",
     "static/media/CombineSemDoms.PNG": "/static/media/CombineSemDoms.6ac57230f0331fd759ef.PNG",
     "static/media/ProlificTeaserPage.png": "/static/media/ProlificTeaserPage.72ffd7f9e3cc733307f6.png",
@@ -45,11 +49,11 @@
     "static/media/prolific_monogram.svg": "/static/media/prolific_monogram.68563c85b415d586f35f.svg",
     "static/media/Logo3.svg": "/static/media/Logo3.7202a1a60549fe7a42b19f1b6d2dfb97.svg",
     "index.html": "/index.html",
-    "main.a317a01a.css.map": "/static/css/main.a317a01a.css.map",
-    "main.4ce763cb.js.map": "/static/js/main.4ce763cb.js.map"
+    "main.4b55b0e6.css.map": "/static/css/main.4b55b0e6.css.map",
+    "main.98d03851.js.map": "/static/js/main.98d03851.js.map"
   },
   "entrypoints": [
-    "static/css/main.a317a01a.css",
-    "static/js/main.4ce763cb.js"
+    "static/css/main.4b55b0e6.css",
+    "static/js/main.98d03851.js"
   ]
 }
