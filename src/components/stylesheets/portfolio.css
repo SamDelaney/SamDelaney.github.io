@@ -16,18 +16,41 @@
     padding: 25px;
 }
 
-.Sliding-Logo {
+.Rolling-Logo {
   padding: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Sliding-Logo {
-    animation: Logo-slide infinite 5s;
+  .Rolling-Logo {
+    animation: Logo-roll infinite 5s;
   }
 }
 
-@keyframes Logo-slide {
+@keyframes Logo-roll {
   0% {transform: translateX(0vw) rotate(0deg);}
   50% {transform: translateX(50vw) rotate(720deg);}
   100% {transform: translateX(0vw) rotate(0deg);}
+}
+
+.Bouncing-Logo {
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Bouncing-Logo {
+    animation: Logo-bounce infinite 10s linear 0.1s;
+  }
+}
+
+@keyframes Logo-bounce {
+  0% {transform: translateX(0vw) translateY(10vh);}
+  10% {transform: translateX(10vw) translateY(20vh);}
+  20% {transform: translateX(20vw) translateY(0vh);}
+  30% {transform: translateX(30vw) translateY(20vh);}
+  40% {transform: translateX(40vw) translateY(0vh);}
+  50% {transform: translateX(50vw) translateY(10vh);}
+  60% {transform: translateX(40vw) translateY(20vh);}
+  70% {transform: translateX(30vw) translateY(0vh);}
+  80% {transform: translateX(20vw) translateY(20vh);}
+  90% {transform: translateX(10vw) translateY(0vh);}
+  100% {transform: translateX(0vw) translateY(10vh);}
 }

@@ -43,9 +43,10 @@ class Portfolio extends React.Component {
         return <div className="DefaultComponentWrapper"> 
             <Text block variant={"xLargePlus"} styles={this.portfolioHeaderStyles}>Professional Work</Text>
             <this.work />
-            <Image src={Logo} width={75} className="Sliding-Logo"/>
+            <Image src={Logo} width={75} className="Rolling-Logo"/>
             <Text block variant={"xLargePlus"} styles={this.portfolioHeaderStyles}>My Projects</Text>
             <this.projects />
+            <Image src={Logo} width={75} className="Bouncing-Logo"/>
         </div>
     }
 }
