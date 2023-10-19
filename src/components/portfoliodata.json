@@ -215,7 +215,9 @@
             "Cardano"
         ],
         "imagepaths": [
-            "./GrabbitGradient_transparent.png"
+            "./GrabbitGradient_transparent.png",
+            "./GrabbitLanding.png",
+            "./GrabbitMint.png"
         ],
         "links": [
             {
@@ -237,7 +239,11 @@
         "Design",
         "Architecture"
       ],
-      "imagepaths": ["./PWMB Rainer Black No Background(1).png"],
+      "imagepaths": [
+        "./PWMB Rainer Black No Background(1).png", 
+        "./pwmblanding.png",
+        "./pwmbconnect.png"
+      ],
       "links": [{
         "type": "site",
         "url": "https://pwmotb.com"
