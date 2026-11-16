@@ -1,66 +1,134 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { treeScenes, type TreeParse } from '$lib/content';
 
-  // A sentence types itself out, a parse tree grows over it, then the
-  // linguistic labels turn into code labels and the same sentence is
-  // written as a function call. Then it all folds away and the next
-  // sentence starts. Every sentence has the shape Pronoun Verb Noun.
-  let { sentences = [
-    ['I', 'design', 'protocols'],
-    ['I', 'build', 'tools'],
-    ['I', 'study', 'languages'],
-    ['I', 'write', 'contracts']
-  ] }: { sentences?: string[][] } = $props();
+  // A sentence types itself out and a parse tree grows over it. A good parse
+  // turns its labels into code labels and writes the sentence as a function
+  // call; a dead end shows why and folds away so the next parse can try.
+  // Scenes and their parses come from `treeScenes` in content.ts.
+  let { scenes = treeScenes }: { scenes?: TreeParse[][] } = $props();
 
-  type Node = { label: string; code: string; children: Node[]; word?: string; x: number; depth: number };
+  type Node = { label: string; code: string; children: Node[]; word?: string; x: number; h: number };
 
-  const ROWS = 11; // 9 for the tree, a gap, then the code line
-  const LEAF_ROW = 8;
-  const LEFT = 4;
-  const GAP = 4;
+  const GAP = 2; // spaces between words
   const NOISE = '!#$%*+=?/\\_-~^';
+  const CODE: Record<string, string> = {
+    S: 'call', NP: 'arg', VP: 'expr', PP: 'kw', AP: 'mod', Neg: 'not', V: 'fn', N: 'id', Pro: 'id', Det: '_', Adj: 'mod', Adv: 'kw', P: 'key'
+  };
 
-  // ---- layout -------------------------------------------------------------
+  // ---- parsing and layout -------------------------------------------------
 
-  function build([w0, w1, w2]: string[]) {
-    const leaf = (word: string): Node => ({ label: '', code: '', children: [], word, x: 0, depth: 4 });
-    const n = (label: string, code: string, children: Node[]): Node => ({ label, code, children, x: 0, depth: 0 });
-    const root = n('S', 'call', [
-      n('NP', 'arg', [n('Pro', 'id', [leaf(w0)])]),
-      n('VP', 'expr', [n('V', 'fn', [leaf(w1)]), n('NP', 'arg', [n('N', 'id', [leaf(w2)])])])
-    ]);
+  function parseTree(src: string): Node[] {
+    const tokens = src.match(/\[|\]|[^\s[\]]+/g) ?? [];
+    let i = 0;
+    const node = (): Node => {
+      i++; // '['
+      const label = tokens[i++];
+      const children: Node[] = [];
+      while (i < tokens.length && tokens[i] !== ']') {
+        if (tokens[i] === '[') children.push(node());
+        else children.push({ label: '', code: '', children: [], word: tokens[i++], x: 0, h: 0 });
+      }
+      i++; // ']'
+      return { label, code: CODE[label] ?? label.toLowerCase(), children, x: 0, h: 0 };
+    };
+    const roots: Node[] = [];
+    while (i < tokens.length) roots.push(node());
+    return roots;
+  }
 
-    // Words sit on the bottom row; each parent centres over its children.
-    let col = LEFT;
-    const place = (node: Node, depth: number) => {
-      if (node.word !== undefined) {
-        node.x = col + Math.floor((node.word.length - 1) / 2);
-        col += node.word.length + GAP;
+  function layout(p: TreeParse) {
+    const roots = parseTree(p.tree);
+    const words: string[] = [];
+    const inner: Node[] = [];
+    let col = 0;
+    // Words sit on the bottom row. Each parent centres over its children (over
+    // the middle one when there's an odd number), and its height above the
+    // words is one more than its tallest child's.
+    const place = (n: Node) => {
+      if (n.word !== undefined) {
+        n.x = col + Math.floor((n.word.length - 1) / 2);
+        words.push(n.word);
+        col += n.word.length + GAP;
         return;
       }
-      node.depth = depth;
-      node.children.forEach((c) => place(c, depth + 1));
-      const xs = node.children.map((c) => c.x);
-      node.x = Math.round((Math.min(...xs) + Math.max(...xs)) / 2);
+      n.children.forEach(place);
+      const xs = n.children.map((c) => c.x);
+      n.x = xs.length % 2 ? xs[(xs.length - 1) / 2] : Math.round((xs[0] + xs[xs.length - 1]) / 2);
+      n.h = 1 + Math.max(...n.children.map((c) => c.h));
+      inner.push(n);
     };
-    place(root, 0);
-
-    const inner: Node[] = [];
-    const walk = (node: Node) => {
-      if (node.word === undefined) inner.push(node);
-      node.children.forEach(walk);
-    };
-    walk(root);
+    roots.forEach(place);
     // Grow from the bottom up, left to right.
-    inner.sort((a, b) => b.depth - a.depth || a.x - b.x);
+    inner.sort((a, b) => a.h - b.h || a.x - b.x);
+    const line = (p.fail ? '✗ ' : '→ ') + p.code;
+    return { inner, words, line, fail: !!p.fail, height: Math.max(...roots.map((r) => r.h)) };
+  }
 
-    const leaves = [w0, w1, w2];
-    return {
-      inner,
-      cols: col - GAP + LEFT,
-      sentence: leaves.join(' '.repeat(GAP)),
-      code: `${w1}(self, ${w2})`
-    };
+  // ---- timeline -----------------------------------------------------------
+
+  const T = { type: 60, grow: 220, hold: 1000, morph: 800, codeChar: 45, hold2: 2200, holdFail: 1400, unChar: 15, fold: 90, eraseChar: 15, pause: 600 };
+
+  type Parse = ReturnType<typeof layout>;
+  type Phase = { kind: string; dur: number; p: number };
+
+  function buildScene(parses: TreeParse[]) {
+    const ps = parses.map(layout);
+    const sentence = ps[0].words.join(' '.repeat(GAP));
+    const phases: Phase[] = [{ kind: 'type', dur: sentence.length * T.type, p: 0 }];
+    let stillAt = 0;
+    ps.forEach((pr, p) => {
+      const last = p === ps.length - 1;
+      const add = (kind: string, dur: number) => phases.push({ kind, dur, p });
+      add('grow', pr.inner.length * T.grow);
+      add('hold', T.hold);
+      if (!pr.fail) add('morph', T.morph);
+      add('code', pr.line.length * T.codeChar);
+      if (last) stillAt = phases.reduce((s, ph) => s + ph.dur, 0);
+      add('hold', pr.fail ? T.holdFail : T.hold2);
+      if (last) {
+        add('fold', pr.inner.length * T.fold);
+        add('erase', Math.max(sentence.length, pr.line.length) * T.eraseChar);
+        add('pause', T.pause);
+      } else {
+        add('uncode', pr.line.length * T.unChar);
+        add('fold', pr.inner.length * T.fold);
+      }
+    });
+    const total = phases.reduce((s, ph) => s + ph.dur, 0);
+    const width = Math.max(sentence.length, ...ps.map((pr) => pr.line.length));
+    return { ps, sentence, phases, total, stillAt, width };
+  }
+
+  type Scene = ReturnType<typeof buildScene>;
+
+  function stateAt(sc: Scene, t: number) {
+    const s = { shown: 0, typing: false, p: -1, visible: 0, morph: 0, code: 0 };
+    for (const ph of sc.phases) {
+      const f = ph.dur > 0 ? Math.min(1, Math.max(0, t / ph.dur)) : 1;
+      const pr = sc.ps[ph.p];
+      switch (ph.kind) {
+        case 'type':
+          s.shown = Math.floor(f * sc.sentence.length);
+          s.typing = f < 1;
+          break;
+        case 'grow':
+          s.p = ph.p; s.morph = 0; s.code = 0;
+          s.visible = f >= 1 ? pr.inner.length : Math.min(pr.inner.length, Math.floor(f * pr.inner.length) + 1);
+          break;
+        case 'morph': s.morph = f; break;
+        case 'code': s.code = Math.floor(f * pr.line.length); break;
+        case 'uncode': s.code = pr.line.length - Math.floor(f * pr.line.length); break;
+        case 'fold': s.visible = pr.inner.length - Math.floor(f * pr.inner.length); break;
+        case 'erase':
+          s.shown = sc.sentence.length - Math.floor(f * sc.sentence.length);
+          s.code = Math.max(0, pr.line.length - Math.floor(f * pr.line.length));
+          break;
+      }
+      if (t < ph.dur) break;
+      t -= ph.dur;
+    }
+    return s;
   }
 
   // ---- drawing ------------------------------------------------------------
@@ -68,34 +136,11 @@
   // Cell styles: 0 branch (muted), 1 label (accent), 2 text (normal)
   type Grid = { ch: string[][]; st: number[][] };
 
-  function blank(cols: number): Grid {
-    return {
-      ch: Array.from({ length: ROWS }, () => Array(cols).fill(' ')),
-      st: Array.from({ length: ROWS }, () => Array(cols).fill(0))
-    };
-  }
-
   function put(g: Grid, row: number, col: number, text: string, style: number) {
     for (let i = 0; i < text.length; i++) {
       if (g.ch[row]?.[col + i] === undefined) continue;
       g.ch[row][col + i] = text[i];
       g.st[row][col + i] = style;
-    }
-  }
-
-  function drawNode(g: Grid, node: Node, label: string) {
-    const row = node.depth * 2;
-    put(g, row, node.x - Math.floor((label.length - 1) / 2), label, 1);
-    const kids = node.children;
-    if (kids.length === 1) {
-      const end = kids[0].word !== undefined ? LEAF_ROW : kids[0].depth * 2;
-      for (let r = row + 1; r < end; r++) put(g, r, kids[0].x, '│', 0);
-    } else {
-      const l = kids[0].x, r = kids[kids.length - 1].x;
-      for (let c = l; c <= r; c++) put(g, row + 1, c, '─', 0);
-      put(g, row + 1, l, '┌', 0);
-      put(g, row + 1, r, '┐', 0);
-      put(g, row + 1, node.x, '┴', 0);
     }
   }
 
@@ -109,12 +154,53 @@
     return s;
   }
 
-  // `pad` spaces go on the left and the row is filled out to `width`, so every
-  // sentence's tree sits centred in a box of the same width.
+  function render(sc: Scene, t: number, rows: number, width: number): string {
+    const leafRow = rows - 3;
+    const rowOf = (n: Node) => (n.word !== undefined ? leafRow : leafRow - 2 * n.h);
+    const g: Grid = {
+      ch: Array.from({ length: rows }, () => Array(sc.width).fill(' ')),
+      st: Array.from({ length: rows }, () => Array(sc.width).fill(0))
+    };
+    const s = stateAt(sc, t);
+
+    put(g, leafRow, 0, sc.sentence.slice(0, s.shown), 2);
+    if (s.typing) put(g, leafRow, s.shown, '▌', 1);
+
+    if (s.p >= 0) {
+      const pr = sc.ps[s.p];
+      for (const node of pr.inner.slice(0, s.visible)) {
+        const row = rowOf(node);
+        const label = s.morph <= 0 ? node.label : s.morph < 1 ? scramble(node.label, node.code, s.morph) : node.code;
+        // Centred over the node, but kept inside the box (an "arg" over "I" would
+        // otherwise start left of column 0).
+        const at = Math.min(Math.max(0, node.x - Math.floor((label.length - 1) / 2)), sc.width - label.length);
+        put(g, row, at, label, 1);
+        const kids = node.children;
+        if (kids.length === 1) {
+          for (let r = row + 1; r < rowOf(kids[0]); r++) put(g, r, kids[0].x, '│', 0);
+          continue;
+        }
+        const l = kids[0].x, r = kids[kids.length - 1].x;
+        for (let c = l; c <= r; c++) put(g, row + 1, c, '─', 0);
+        kids.forEach((k, i) => put(g, row + 1, k.x, i === 0 ? '┌' : i === kids.length - 1 ? '┐' : '┬', 0));
+        put(g, row + 1, node.x, kids.some((k) => k.x === node.x) ? '┼' : '┴', 0);
+        for (const k of kids) for (let rr = row + 2; rr < rowOf(k); rr++) put(g, rr, k.x, '│', 0);
+      }
+      if (s.code > 0) {
+        put(g, rows - 1, 0, pr.line.slice(0, s.code), 2);
+        put(g, rows - 1, 0, pr.line[0], 1);
+      }
+    }
+
+    return toHtml(g, Math.floor((width - sc.width) / 2), width);
+  }
+
+  // `pad` spaces go on the left and each row is filled out to `width`, so
+  // every scene sits centred in a box of the same size.
   function toHtml(g: Grid, pad: number, width: number): string {
     let out = '';
     const right = ' '.repeat(Math.max(0, width - pad - g.ch[0].length));
-    for (let r = 0; r < ROWS; r++) {
+    for (let r = 0; r < g.ch.length; r++) {
       out += ' '.repeat(pad);
       let run = '', style = -1;
       const flush = () => {
@@ -132,67 +218,13 @@
     return out;
   }
 
-  function ownWidth(tree: ReturnType<typeof build>): number {
-    return Math.max(tree.cols, tree.code.length + 2 + LEFT);
-  }
-
-  // ---- timeline -----------------------------------------------------------
-
-  const T = { type: 75, grow: 280, hold: 1300, morph: 900, codeChar: 50, hold2: 2400, fold: 110, erase: 18, pause: 500 };
-
-  function render(tree: ReturnType<typeof build>, t: number, width: number, still = false): string {
-    const g = blank(ownWidth(tree));
-    const n = tree.inner.length;
-    const s = tree.sentence;
-    const code = `→ ${tree.code}`;
-
-    const typeEnd = s.length * T.type;
-    const growEnd = typeEnd + n * T.grow;
-    const morphStart = growEnd + T.hold;
-    const morphEnd = morphStart + T.morph;
-    const codeEnd = morphEnd + code.length * T.codeChar;
-    const foldStart = codeEnd + T.hold2;
-    const foldEnd = foldStart + n * T.fold;
-    const eraseEnd = foldEnd + (s.length + code.length) * T.erase;
-
-    if (still) t = growEnd;
-
-    // Sentence: typed in, later erased from the end.
-    let shown = Math.min(s.length, Math.floor(t / T.type));
-    if (t > foldEnd) shown = Math.max(0, s.length - Math.floor((t - foldEnd) / T.erase));
-    put(g, LEAF_ROW, LEFT, s.slice(0, shown), 2);
-    if (t < typeEnd) put(g, LEAF_ROW, LEFT + shown, '▌', 1);
-
-    // Tree: grows bottom up, folds top down.
-    let visible = t < typeEnd ? 0 : Math.min(n, Math.floor((t - typeEnd) / T.grow) + 1);
-    if (t > foldStart) visible = Math.max(0, n - Math.floor((t - foldStart) / T.fold) - 1);
-    const p = Math.max(0, Math.min(1, (t - morphStart) / T.morph));
-    tree.inner.slice(0, visible).forEach((node) => {
-      const label = t < morphStart ? node.label : p < 1 ? scramble(node.label, node.code, p) : node.code;
-      drawNode(g, node, label);
-    });
-
-    // Code line: typed after the morph, erased with the sentence.
-    let codeShown = t > morphEnd ? Math.min(code.length, Math.floor((t - morphEnd) / T.codeChar)) : 0;
-    if (t > foldEnd) codeShown = Math.max(0, code.length - Math.floor((t - foldEnd) / T.erase));
-    if (codeShown > 0) {
-      put(g, ROWS - 1, LEFT, code.slice(0, codeShown), 2);
-      put(g, ROWS - 1, LEFT, '→', 1);
-    }
-
-    return toHtml(g, Math.floor((width - ownWidth(tree)) / 2), width);
-  }
-
-  function cycleLength(tree: ReturnType<typeof build>): number {
-    const n = tree.inner.length, s = tree.sentence.length, c = tree.code.length + 2;
-    return s * T.type + n * T.grow + T.hold + T.morph + c * T.codeChar + T.hold2 + n * T.fold + (s + c) * T.erase + T.pause;
-  }
-
   // ---- loop ---------------------------------------------------------------
 
-  const trees = $derived(sentences.map(build));
-  // One width for all sentences, so the centred box doesn't shift between them.
-  const width = $derived(Math.max(...trees.map(ownWidth)));
+  const built = $derived(scenes.map(buildScene));
+  // One box for every scene: tall enough for the tallest tree plus the code
+  // line, wide enough for the widest sentence, so nothing shifts between them.
+  const rows = $derived(2 * Math.max(...built.flatMap((sc) => sc.ps.map((p) => p.height))) + 3);
+  const width = $derived(Math.max(...built.map((sc) => sc.width)));
   let html = $state('');
 
   onMount(() => {
@@ -205,18 +237,19 @@
       last = now;
       if (!start) start = now;
       let t = now - start;
-      if (t > cycleLength(trees[idx])) {
-        idx = (idx + 1) % trees.length;
+      if (t > built[idx].total) {
+        idx = (idx + 1) % built.length;
         start = now;
         t = 0;
       }
-      html = render(trees[idx], t, width);
+      html = render(built[idx], t, rows, width);
     };
 
     const begin = () => {
       cancelAnimationFrame(raf);
       start = 0;
-      if (still.matches) html = render(trees[0], 0, width, true);
+      html = render(built[0], 0, rows, width); // holds the box's size until the first frame
+      if (still.matches) html = render(built[0], built[0].stillAt, rows, width);
       else raf = requestAnimationFrame(tick);
     };
 
@@ -236,12 +269,11 @@
     width: fit-content;
     max-width: 100%;
     margin: 0 auto;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.2;
     color: var(--muted);
     user-select: none;
     overflow: hidden;
-    min-height: calc(11 * 1.2em);
   }
   pre :global(b) {
     font-weight: 600;
@@ -252,6 +284,6 @@
     color: var(--fg);
   }
   @media (max-width: 480px) {
-    pre { font-size: 12px; }
+    pre { font-size: 11px; }
   }
 </style>

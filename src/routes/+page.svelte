@@ -32,14 +32,19 @@
 </div>
 
 <style>
-  /* The tree sits to the right of the intro, and above it on narrow screens. */
+  /* The tree sits to the right of the intro on wide screens (1000px and up), and above it otherwise. */
   .intro {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 32px;
     align-items: center;
   }
-  @media (max-width: 640px) {
+  /* On wide screens the tree hangs into the right margin, so the intro text
+     keeps the column's full width minus a little. */
+  @media (min-width: 1000px) {
+    .intro { margin-right: -180px; }
+  }
+  @media (max-width: 999px) {
     .intro { grid-template-columns: 1fr; gap: 0; }
     .intro > :global(pre) { order: -1; margin-bottom: 28px; }
   }
