@@ -37,28 +37,28 @@ export const projects: Project[] = [
     name: 'sundial',
     year: '2025–',
     summary: 'An institutional layer on Bitcoin: staking, a pooled vault, and a bridge to other chains.',
-    stack: 'typescript · bitcoin · cardano',
+    stack: 'typescript · bitcoin · financial products · zk cryptography',
     href: 'https://sundialprotocol.com'
   },
   {
     name: 'zk verifiers',
     year: '2024',
     summary: 'The first PLONK and Bulletproofs verifiers in Aiken, plus Groth16.',
-    stack: 'aiken',
+    stack: 'aiken · zk cryptography',
     href: 'https://github.com/ADAOcommunity/zk'
   },
   {
     name: 'cip-102',
     year: '2023',
     summary: 'The Cardano standard for on-chain NFT royalties with split payments.',
-    stack: 'cardano standard',
+    stack: 'cardano standard · payments',
     href: 'https://cips.cardano.org/cip/CIP-0102'
   },
   {
     name: 'hydra-auction',
     year: '2023',
     summary: 'The first application built on Cardano’s Hydra state channels.',
-    stack: 'haskell · hydra'
+    stack: 'haskell · typescript · react'
   },
   {
     name: 'grabbit',
