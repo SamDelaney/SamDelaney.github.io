@@ -14,8 +14,15 @@
     <h1>{site.name}</h1>
     <p class="tagline">{site.tagline}</p>
 
-    {#each bio as paragraph}
-      <p>{@html rich(paragraph)}</p>
+    {#each bio as entry}
+      {#if typeof entry === 'string'}
+        <p>{@html rich(entry)}</p>
+      {:else}
+        <p class="lead">{@html rich(entry.lead)}</p>
+        <ul>
+          {#each entry.items as item}<li>{@html rich(item)}</li>{/each}
+        </ul>
+      {/if}
     {/each}
   </div>
   <SyntaxTree />
@@ -78,6 +85,10 @@
     line-height: 18px;
     white-space: nowrap;
   }
+  /* Bullets in the intro: a green dash, like a terminal list. */
+  .lead { margin-bottom: 0; }
+  ul { list-style: none; padding: 0; margin-top: 0; }
+  li::before { content: '- '; color: var(--accent); }
   .org { color: var(--muted); }
   .card:hover .org { color: var(--accent); }
 </style>
