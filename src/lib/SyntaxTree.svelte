@@ -225,7 +225,11 @@
   // line, wide enough for the widest sentence, so nothing shifts between them.
   const rows = $derived(2 * Math.max(...built.flatMap((sc) => sc.ps.map((p) => p.height))) + 3);
   const width = $derived(Math.max(...built.map((sc) => sc.width)));
-  let html = $state('');
+  // Until the animation starts, show its blank first frame. This is also what
+  // the prerendered page contains, so the box has its size before any script
+  // runs and the intro text doesn't jump when the page loads.
+  let frame = $state<string | null>(null);
+  const html = $derived(frame ?? render(built[0], 0, rows, width));
 
   onMount(() => {
     const still = matchMedia('(prefers-reduced-motion: reduce)');
@@ -242,14 +246,14 @@
         start = now;
         t = 0;
       }
-      html = render(built[idx], t, rows, width);
+      frame = render(built[idx], t, rows, width);
     };
 
     const begin = () => {
       cancelAnimationFrame(raf);
       start = 0;
-      html = render(built[0], 0, rows, width); // holds the box's size until the first frame
-      if (still.matches) html = render(built[0], built[0].stillAt, rows, width);
+      frame = null;
+      if (still.matches) frame = render(built[0], built[0].stillAt, rows, width);
       else raf = requestAnimationFrame(tick);
     };
 

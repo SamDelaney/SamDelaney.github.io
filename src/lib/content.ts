@@ -9,16 +9,18 @@ export const site = {
 
 // Short intro on the home page. **text** is bold, *text* is italic.
 export const bio = [
-  'I design *products* and build the tools around them. Right now I lead core tech at **Sundial**, an institutional layer on Bitcoin.',
-  'Before that I co-founded **Grabbit** and wrote smart contracts at Ikigai, and before that I built *language software* at SIL International.'
+  'I design and build *products*, *protocols*, and the tools around them. Right now I lead the technical direction at **Sundial**, an institutional layer on Bitcoin.',
+  "Before that I co-founded **Grabbit** and wrote smart contracts at Ikigai, and before that I built *language software* at SIL International.",
+  "I like building in *the adjacent possible*: the first app on Cardano's Hydra, the first PLONK and Bulletproofs verifiers in Aiken. Along the way I've led teams to deliver on more than $2M in grants."
 ];
 
-export type Role = { title: string; org: string; href: string };
+// `tag` is an optional small label shown in the card's corner.
+export type Role = { title: string; org: string; href: string; tag?: string };
 
 export const currentWork: Role[] = [
   { title: 'core tech lead', org: 'sundial', href: 'https://sundialprotocol.com' },
-  { title: 'author', org: 'cip-102', href: 'https://cips.cardano.org/cip/CIP-0102' },
-  { title: 'co-founder', org: 'grabbit', href: 'https://grabbit.market' }
+  { title: 'author', org: 'cip-102', href: 'https://cips.cardano.org/cip/CIP-0102', tag: 'grant-funded' },
+  { title: 'lead engineer', org: 'zk-verifiers', href: 'https://github.com/ADAOcommunity/zk', tag: 'grant-funded' }
 ];
 
 export type Project = {
@@ -29,11 +31,11 @@ export type Project = {
   href?: string;
 };
 
-// Newest first. Add a project by adding a line.
+// Newest first. Add a project by adding a line. A year ending in – is ongoing.
 export const projects: Project[] = [
   {
     name: 'sundial',
-    year: '2025',
+    year: '2025–',
     summary: 'An institutional layer on Bitcoin: staking, a pooled vault, and a bridge to other chains.',
     stack: 'typescript · bitcoin · cardano',
     href: 'https://sundialprotocol.com'
@@ -60,7 +62,7 @@ export const projects: Project[] = [
   },
   {
     name: 'grabbit',
-    year: '2021',
+    year: '2021–',
     summary: 'A Cardano auction marketplace, with the first eUTxO linked list in production.',
     stack: 'haskell · typescript · svelte',
     href: 'https://grabbit.market'
@@ -122,6 +124,7 @@ export const treeScenes: TreeParse[][] = [
   ],
   [{ tree: '[S [NP [Det the] [N verifier]] [VP [V rejects] [NP [Adj forged] [N proofs]]]]', code: 'rejects(verifier, forged(proofs))' }],
   [{ tree: '[S [NP [Pro I]] [VP [V write] [NP [N contracts]]]]', code: 'write(self, contracts)' }],
+  [{ tree: '[S [NP [Pro I]] [VP [V design] [NP [N protocols]]]]', code: 'design(self, protocols)' }],
   [{ tree: '[VP [V verify] [NP [Det the] [N proof]]]', code: 'verify(proof)' }],
   [{ tree: '[VP [V made] [AP [Adj fruitful]] [PP [P by] [NP [Det the] [N vine]]]]', code: 'make(self, fruitful, by=vine)' }],
   [{ tree: '[S [NP [N words]] [VP [V become] [NP [N functions]]]]', code: 'become(words, functions)' }]

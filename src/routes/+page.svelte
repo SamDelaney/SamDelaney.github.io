@@ -25,6 +25,7 @@
 <div class="cards">
   {#each currentWork as role}
     <a class="card" href={role.href} target="_blank" rel="noreferrer">
+      {#if role.tag}<span class="tag">{role.tag}</span>{/if}
       <span>{role.title}</span>
       <span class="org">@{role.org}</span>
     </a>
@@ -50,10 +51,11 @@
   }
   .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 10px;
   }
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid var(--line);
@@ -62,6 +64,20 @@
     transition: border-color 0.15s;
   }
   .card:hover { border-color: var(--accent); }
+  /* A small pill sitting on the card's top-right corner. */
+  .tag {
+    position: absolute;
+    top: -9px;
+    right: 10px;
+    padding: 0 7px;
+    border-radius: 9px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    white-space: nowrap;
+  }
   .org { color: var(--muted); }
   .card:hover .org { color: var(--accent); }
 </style>
