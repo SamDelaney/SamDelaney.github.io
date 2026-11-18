@@ -195,6 +195,12 @@
     return toHtml(g, Math.floor((width - sc.width) / 2), width);
   }
 
+  // The web font has no box-drawing glyphs or arrows, so the browser borrows
+  // them from another font, and on Android that font is wider, which pushed
+  // every row with lines in it to the right. Each such character gets a box
+  // exactly one cell wide, so the grid holds whatever font draws it.
+  const cells = (run: string) => run.replace(/[^\x00-\xff]/g, (c) => `<u>${c}</u>`);
+
   // `pad` spaces go on the left and each row is filled out to `width`, so
   // every scene sits centred in a box of the same size.
   function toHtml(g: Grid, pad: number, width: number): string {
@@ -205,7 +211,8 @@
       let run = '', style = -1;
       const flush = () => {
         if (!run) return;
-        out += style === 1 ? `<b>${run}</b>` : style === 2 ? `<i>${run}</i>` : run;
+        const text = cells(run);
+        out += style === 1 ? `<b>${text}</b>` : style === 2 ? `<i>${text}</i>` : text;
         run = '';
       };
       for (let c = 0; c < g.ch[r].length; c++) {
@@ -282,6 +289,13 @@
   pre :global(b) {
     font-weight: 600;
     color: var(--accent);
+  }
+  pre :global(u) {
+    display: inline-block;
+    width: 1ch;
+    text-align: center;
+    text-decoration: none;
+    overflow: visible;
   }
   pre :global(i) {
     font-style: normal;
