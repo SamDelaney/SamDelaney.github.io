@@ -20,7 +20,7 @@
       {:else}
         <p class="lead">{@html rich(entry.lead)}</p>
         <ul>
-          {#each entry.items as item}<li>{@html rich(item)}</li>{/each}
+          {#each entry.items as item}<li><span class="dash" aria-hidden="true">-</span><span>{@html rich(item)}</span></li>{/each}
         </ul>
       {/if}
     {/each}
@@ -88,11 +88,11 @@
   /* Bullets in the intro: a green dash, like a terminal list. */
   .lead { margin-bottom: 0; }
   ul { list-style: none; padding: 0; margin-top: 0; }
-  /* The dash sits in the left padding, so every line of a wrapped item
-     starts in the same column. (A negative text-indent did this on desktop
-     but not in mobile browsers.) */
-  li { position: relative; padding-left: 2ch; }
-  li::before { content: '-'; position: absolute; left: 0; color: var(--accent); }
+  /* The dash and the text are two grid columns, so a wrapped line can only
+     continue in the text column. Units like ch in a padding broke on phones,
+     where the browser can draw text larger than the size CSS measures from. */
+  li { display: grid; grid-template-columns: auto 1fr; column-gap: 1ch; }
+  .dash { color: var(--accent); }
   .org { color: var(--muted); }
   .card:hover .org { color: var(--accent); }
 </style>
