@@ -28,6 +28,9 @@ html, body {
   font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  /* Stop Android Chrome from enlarging some blocks of text and not others. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a { color: inherit; text-decoration: none; }
