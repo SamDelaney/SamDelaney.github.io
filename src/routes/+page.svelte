@@ -88,6 +88,9 @@
   /* Bullets in the intro: a green dash, like a terminal list. */
   .lead { margin-bottom: 0; }
   ul { list-style: none; padding: 0; margin-top: 0; }
+  /* Hanging indent: the dash is 2 characters wide, so a wrapped line lines up
+     under the text, not under the dash. */
+  li { padding-left: 2ch; text-indent: -2ch; }
   li::before { content: '- '; color: var(--accent); }
   .org { color: var(--muted); }
   .card:hover .org { color: var(--accent); }

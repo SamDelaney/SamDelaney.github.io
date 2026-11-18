@@ -7,14 +7,15 @@ export const site = {
   url: "https://samdelaney.github.io",
 };
 
-// Short intro on the home page. **text** is bold, *text* is italic.
+// Short intro on the home page. **text** is bold, *text* is italic,
+// [text](url) is a link.
 // An entry is a paragraph, or a lead line with a bulleted list under it.
 export type BioEntry = string | { lead: string; items: string[] };
 export const bio: BioEntry[] = [
   "I design and build *products*, *protocols*, and the tools around them. Right now I lead the technical direction at **Sundial**, an institutional layer on Bitcoin.",
   "Before that I co-founded **Grabbit** and wrote smart contracts at Ikigai, and before that I built *language software* at SIL International. Along the way I've led teams to deliver on *>$2M* in grants.",
   {
-    lead: "I like building *firsts*:",
+    lead: "I like building in the [*adjacent possible*](https://sirupsen.com/adjacent-possible):",
     items: [
       "first onchain app using Hydra state channels",
       "first PLONK and Bulletproofs verifiers in Aiken",

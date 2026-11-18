@@ -35,6 +35,9 @@ a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 
 strong { font-weight: 600; }
 em { font-style: italic; color: var(--accent); }
+/* Links inside running text (from [text](url) in content.ts). */
+a.inline { text-decoration: underline dotted var(--accent); text-underline-offset: 4px; }
+a.inline:hover { text-decoration-style: solid; }
 
 .wrap {
   max-width: 720px;
